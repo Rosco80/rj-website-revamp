@@ -174,7 +174,7 @@ const Products = () => {
             <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 mb-24 product-card">
                 <div className="w-full h-[50vh] md:h-[60vh] rounded-[2rem] overflow-hidden relative shadow-2xl">
                     <img
-                        src="https://lh3.googleusercontent.com/sitesv/APaQ0SRYAViu9pjFk-BtudriARCh--T2x9lsSJuuyyzQcRYKECm6gjl44KSQfUJUzwjjLqfecJxbbEnuho_JzfASpaIpd2SN6FCcXjNeng7dCegW7w3xuhQdiV7eaKIS36oEd_8vNCVsxM67OoV0EhT382QVeZuPj5s2Lywj-LOJ-iHyJ75Pkw8KgiF5nZMypLZKtWPHr4ABsSUCPc82tMUCGRluh-syBsCPtx0q=w1280"
+                        src="/hero-products.png"
                         alt="Stacked Vitrex Timber Industries Logs"
                         className="w-full h-full object-cover"
                     />

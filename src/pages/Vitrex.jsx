@@ -42,7 +42,7 @@ const Vitrex = () => {
                     <div className="flex-1 w-full">
                         <div className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[2/3] max-h-[80vh] w-full overflow-hidden rounded-[2rem] lg:rounded-bl-[6rem] lg:rounded-tr-[6rem] shadow-2xl">
                             <img
-                                src="https://lh3.googleusercontent.com/sitesv/APaQ0SRcQkHSZPv1ZjGUiVKGH6rM4XuJJtLYYFxEcPp8H6j4L7c1jBK3gM6FiBVzhNRTeW5slWJ7L5ADLn2406_Kd7qN6oraUoUq2tIrt5QywtrNoyh1bPtVm1FAUieRNS0PjBL4X01nQN1tssbLGNnePWmzbYwHqCAdOPInXMpL_NbUWe8ZCCqYXY7_5hL-lB9qxl9us31pUwzVkfpNmD40QxyLR5zyzmYYvDUvqkE=w1280"
+                                src="/hero-vitrex.jpg"
                                 alt="Sustainable forestry and teak plantations in Malaysia"
                                 className="w-full h-full object-cover origin-center"
                             />

@@ -72,7 +72,7 @@ const Hero = () => {
                     <div ref={imageContainerRef} className="relative h-[400px] lg:h-[600px] w-full overflow-hidden rounded-[2rem] lg:rounded-bl-[6rem] lg:rounded-tr-[6rem] shadow-2xl">
                         <img
                             ref={imageRef}
-                            src="https://lh3.googleusercontent.com/sitesv/APaQ0SRHtFGxxGi0qSlic47KI9ZJOHiO5ysfx8rXO24EMvbQBT_ZUd7ze8HvmJefWQ7D2Oz4tlhCn9-pfV6v8YRJCwr7sENGBQudh9DlUZwChtUxzbAWEqUFVZCPojL-NNaDzkOPPNOonk8RLYYT6DKomFNb_0eRdh-vKRcXFD-Ugi1n93tNA6FcNqYfcgBEUNXLsGT0stSQJbOkTDaEqRDn_xT2YkWEEDawDgQT0Kw=w1280"
+                            src="/hero-home.jpg"
                             alt="Raw Malaysian timber logs and planks"
                             className="w-full h-full object-cover"
                         />
