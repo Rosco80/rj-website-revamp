@@ -7,35 +7,48 @@ import Products from './pages/Products';
 import Agarwood from './pages/Agarwood';
 import Blog from './pages/Blog';
 import About from './pages/About';
+import StudioPage from './pages/StudioPage';
 import Footer from './components/Footer';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!pathname.startsWith('/studio')) {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
   return null;
 };
+
+function AppContent() {
+  const location = useLocation();
+  const isStudio = location.pathname.startsWith('/studio');
+
+  return (
+    <div className="min-h-screen flex flex-col w-full relative">
+      {!isStudio && <Navbar />}
+      <main className="flex-grow w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/vitrex" element={<Vitrex />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/agarwood" element={<Agarwood />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/studio/*" element={<StudioPage />} />
+        </Routes>
+      </main>
+      {!isStudio && <Footer />}
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col w-full relative">
-        <Navbar />
-        <main className="flex-grow w-full">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/vitrex" element={<Vitrex />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/agarwood" element={<Agarwood />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 }
