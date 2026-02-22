@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, BookOpen, Clock, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { client, urlFor } from '../lib/sanity';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -79,9 +80,9 @@ const Blog = () => {
                 ) : posts.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-12 md:gap-y-16">
                         {posts.map((post) => (
-                            <article key={post._id} className="blog-post flex flex-col group cursor-pointer opacity-0">
+                            <article key={post._id} className="blog-post flex flex-col group opacity-0">
                                 {/* Semantic Image Wrapper */}
-                                <figure className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 relative bg-brand-cream border border-brand-charcoal/5 shadow-sm">
+                                <Link to={`/blog/${post.slug.current}`} className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 relative bg-brand-cream border border-brand-charcoal/5 shadow-sm block">
                                     <img
                                         src={urlFor(post.mainImage).width(800).url()}
                                         alt={post.title}
@@ -89,7 +90,7 @@ const Blog = () => {
                                         loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-brand-moss/0 group-hover:bg-brand-moss/10 transition-colors duration-500"></div>
-                                </figure>
+                                </Link>
 
                                 {/* Semantic Content Area */}
                                 <div className="flex flex-col flex-grow">
@@ -101,9 +102,11 @@ const Blog = () => {
                                     </div>
 
                                     {/* Heading */}
-                                    <h2 className="text-2xl font-sans font-medium text-brand-charcoal mb-3 group-hover:text-brand-moss transition-colors line-clamp-2">
-                                        {post.title}
-                                    </h2>
+                                    <Link to={`/blog/${post.slug.current}`}>
+                                        <h2 className="text-2xl font-sans font-medium text-brand-charcoal mb-3 group-hover:text-brand-moss transition-colors line-clamp-2">
+                                            {post.title}
+                                        </h2>
+                                    </Link>
 
                                     {/* SEO description */}
                                     <p className="text-brand-charcoal/70 font-sans leading-relaxed mb-6 line-clamp-3">
@@ -112,16 +115,14 @@ const Blog = () => {
 
                                     {/* Link */}
                                     <div className="mt-auto">
-                                        <a
-                                            href={post.externalLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                        <Link
+                                            to={`/blog/${post.slug.current}`}
                                             className="inline-flex items-center gap-2 text-brand-moss font-medium font-sans group-hover:text-brand-clay transition-colors group/link"
                                             aria-label={`Read full article: ${post.title}`}
                                         >
                                             <span className="border-b border-transparent group-hover/link:border-brand-clay transition-colors pb-0.5">Read Article</span>
                                             <ArrowRight size={16} className="transform group-hover/link:translate-x-1 transition-transform" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </article>
@@ -139,4 +140,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
 

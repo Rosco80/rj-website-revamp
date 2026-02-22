@@ -6,6 +6,7 @@ import Vitrex from './pages/Vitrex';
 import Products from './pages/Products';
 import Agarwood from './pages/Agarwood';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import About from './pages/About';
 import StudioPage from './pages/StudioPage';
 import Footer from './components/Footer';
@@ -35,6 +36,7 @@ function AppContent() {
           <Route path="/products" element={<Products />} />
           <Route path="/agarwood" element={<Agarwood />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
           <Route path="/studio/*" element={<StudioPage />} />
         </Routes>
