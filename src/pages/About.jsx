@@ -45,7 +45,7 @@ const About = () => {
             image: "/andrea.png"
         },
         {
-            name: "Firmin RiEu",
+            name: "Firmin Rieu",
             role: "Director",
             email: "firmin@rjwoodtrading.com",
             phone: "+60 11-6972 2994",
