@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-charcoal antialiased selection:bg-brand-clay selection:text-white;
+  }
+}
+
+/* Base custom styles for GSAP triggers or other needs */
+.split-line {
+  overflow: hidden;
+}
+
+.split-word {
+  display: inline-block;
+}
+
+.gsap-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
