@@ -18,11 +18,11 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <button className="group relative overflow-hidden rounded-full bg-brand-clay text-white px-8 py-4 font-sans font-medium flex items-center gap-3 transition-transform hover:scale-105">
+                    <Link to="/quote" className="group relative overflow-hidden rounded-full bg-brand-clay text-white px-8 py-4 font-sans font-medium flex items-center gap-3 transition-transform hover:scale-105">
                         <span className="relative z-10">Request a quote</span>
                         <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0"></div>
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Footer Bottom */}

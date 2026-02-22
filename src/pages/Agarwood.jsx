@@ -118,7 +118,7 @@ const Agarwood = () => {
                 <p className="text-xl text-brand-cream/60 mb-12 max-w-2xl mx-auto">
                     Transform your daily rituals into extraordinary experiences. If you’re looking for premium Agarwood Essential Oils, get in touch with our team today.
                 </p>
-                <Link to="/#contact" className="inline-flex items-center gap-3 bg-brand-clay text-white px-8 py-4 rounded-full font-sans font-medium hover:bg-[#a64526] transition-colors shadow-lg shadow-brand-clay/20">
+                <Link to="/quote" className="inline-flex items-center gap-3 bg-brand-clay text-white px-8 py-4 rounded-full font-sans font-medium hover:bg-[#a64526] transition-colors shadow-lg shadow-brand-clay/20">
                     Request a Quote
                     <ArrowRight size={20} />
                 </Link>

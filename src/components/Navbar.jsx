@@ -40,9 +40,12 @@ const Navbar = () => {
                             {link.name}
                         </Link>
                     ))}
-                    <button className={`${isDarkPage ? 'bg-brand-cream text-brand-charcoal hover:bg-brand-clay hover:text-white' : 'bg-brand-charcoal text-brand-cream hover:bg-brand-moss'} px-6 py-2.5 rounded-full text-sm font-medium transition-colors`}>
+                    <Link
+                        to="/quote"
+                        className={`${isDarkPage ? 'bg-brand-cream text-brand-charcoal hover:bg-brand-clay hover:text-white' : 'bg-brand-charcoal text-brand-cream hover:bg-brand-moss'} px-6 py-2.5 rounded-full text-sm font-medium transition-colors`}
+                    >
                         Get Quote
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -67,12 +70,13 @@ const Navbar = () => {
                                 {link.name}
                             </Link>
                         ))}
-                        <button
+                        <Link
+                            to="/quote"
                             onClick={() => setIsOpen(false)}
                             className="mt-8 bg-brand-charcoal text-brand-cream px-8 py-3 rounded-full text-lg font-medium"
                         >
                             Get Quote
-                        </button>
+                        </Link>
                     </div>
                 )}
             </div>

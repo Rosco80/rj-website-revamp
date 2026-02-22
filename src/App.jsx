@@ -9,7 +9,9 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
 import StudioPage from './pages/StudioPage';
+import Quote from './pages/Quote';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -38,10 +40,12 @@ function AppContent() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
+          <Route path="/quote" element={<Quote />} />
           <Route path="/studio/*" element={<StudioPage />} />
         </Routes>
       </main>
       {!isStudio && <Footer />}
+      {!isStudio && <BackToTop />}
     </div>
   );
 }
