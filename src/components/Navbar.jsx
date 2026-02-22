@@ -8,6 +8,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
+        { name: 'About Us', path: '/about' },
         { name: 'Products', path: '/products' },
         { name: 'Vitrex Timber Industries', path: '/vitrex' },
         { name: 'Agarwood', path: '/agarwood' },
