@@ -75,6 +75,8 @@ const Hero = () => {
                             src="/hero-home.jpg"
                             alt="Raw Malaysian timber logs and planks"
                             className="w-full h-full object-cover"
+                            fetchpriority="high"
+                            loading="eager"
                         />
                         {/* Overlay for aesthetic tint */}
                         <div className="absolute inset-0 bg-brand-moss/10 mix-blend-multiply transition-opacity hover:opacity-0 duration-700"></div>
