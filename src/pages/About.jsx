@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, Globe, ShieldCheck, Heart } from 'lucide-react';
+import { Mail, Phone, Globe, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -55,6 +56,29 @@ const About = () => {
 
     return (
         <div className="w-full bg-brand-cream pt-32 pb-24 min-h-screen">
+            <SEO
+                title="About Us"
+                description="R&J International Trading is a Franco-Malaysian timber company committed to sustainable forestry, quality hardwoods, and reliable global delivery."
+                canonical="/about"
+                schemas={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": "Andrea Rossi",
+                        "jobTitle": "Sales & Customer Relations",
+                        "email": "andrea@rjwoodtrading.com",
+                        "worksFor": { "@type": "Organization", "name": "R&J Wood Trading", "url": "https://rjwoodtrading.com" }
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": "Firmin Rieu",
+                        "jobTitle": "Director",
+                        "email": "firmin@rjwoodtrading.com",
+                        "worksFor": { "@type": "Organization", "name": "R&J Wood Trading", "url": "https://rjwoodtrading.com" }
+                    }
+                ]}
+            />
 
             {/* Hero Section */}
             <section ref={heroRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32 opacity-0">
@@ -153,6 +177,25 @@ const About = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mt-8">
+                <div className="bg-brand-moss/5 border border-brand-moss/10 rounded-3xl p-12 text-center">
+                    <h2 className="text-3xl md:text-4xl font-display italic text-brand-charcoal mb-4">
+                        Ready to work together?
+                    </h2>
+                    <p className="text-brand-charcoal/70 font-sans leading-relaxed max-w-xl mx-auto mb-8">
+                        Get a tailored quote for your timber requirements. Our team typically responds within one business day.
+                    </p>
+                    <Link
+                        to="/quote"
+                        className="inline-flex items-center gap-3 bg-brand-clay text-white px-8 py-4 rounded-full font-sans font-medium hover:bg-[#a64526] transition-colors"
+                    >
+                        Request a Quote
+                        <ArrowRight size={20} />
+                    </Link>
                 </div>
             </section>
 

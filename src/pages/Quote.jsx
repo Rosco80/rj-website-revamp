@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -15,6 +16,11 @@ const Quote = () => {
 
     return (
         <div className="w-full bg-brand-cream pt-32 pb-24 min-h-screen">
+            <SEO
+                title="Request a Quote"
+                description="Get a custom quote for premium Malaysian timber. Fill out our form and our team will provide a tailored solution for your timber project requirements."
+                canonical="/quote"
+            />
             <div ref={containerRef} className="max-w-4xl mx-auto px-6 md:px-12 opacity-0">
 
                 {/* Back Link */}

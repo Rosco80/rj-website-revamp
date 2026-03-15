@@ -29,9 +29,14 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-brand-cream/10 text-sm text-brand-cream/50 font-sans">
                     <p>© {new Date().getFullYear()} R&J Wood Trading. All rights reserved.</p>
 
-                    <div className="flex gap-6">
-                        <Link to="/" className="hover:text-brand-clay transition-colors">Timber Solutions</Link>
-                        <Link to="/vitrex" className="hover:text-brand-clay transition-colors">Vitrex (Sister Company)</Link>
+                    <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
+                        <Link to="/" className="hover:text-brand-clay transition-colors">Home</Link>
+                        <Link to="/about" className="hover:text-brand-clay transition-colors">About</Link>
+                        <Link to="/products" className="hover:text-brand-clay transition-colors">Products</Link>
+                        <Link to="/vitrex" className="hover:text-brand-clay transition-colors">Vitrex</Link>
+                        <Link to="/agarwood" className="hover:text-brand-clay transition-colors">Agarwood Oil</Link>
+                        <Link to="/blog" className="hover:text-brand-clay transition-colors">Insights</Link>
+                        <Link to="/quote" className="hover:text-brand-clay transition-colors">Get a Quote</Link>
                         <a href="#" className="hover:text-brand-clay transition-colors">Privacy</a>
                     </div>
                 </div>

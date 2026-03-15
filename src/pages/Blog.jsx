@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, BookOpen, Clock, Tag } from 'lucide-react';
@@ -59,6 +60,11 @@ const Blog = () => {
 
     return (
         <main className="w-full bg-brand-surface pt-32 pb-24 min-h-screen">
+            <SEO
+                title="Insights & Expertise"
+                description="Explore R&J Wood Trading's latest articles on sustainable forestry, timber characteristics, industry insights, and the benefits of natural wood products."
+                canonical="/blog"
+            />
 
             {/* SEO Optimized Header */}
             <header ref={headerRef} className="max-w-4xl mx-auto px-6 md:px-12 text-center mb-24 opacity-0">

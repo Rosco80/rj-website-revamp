@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,6 +133,26 @@ const Products = () => {
 
     return (
         <div className="w-full bg-brand-surface pt-32 pb-24 min-h-screen">
+            <SEO
+                title="Our Products"
+                description="Explore R&J Wood Trading's complete range of sustainable Malaysian timber — heavy hardwood, medium hardwood, light hardwood, mixed hardwood, plywood, and hardwood flooring."
+                canonical="/products"
+                schemas={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "ItemList",
+                        "name": "Timber Products — R&J Wood Trading",
+                        "description": "Complete range of sustainably sourced Malaysian hardwoods for construction, furniture, and flooring.",
+                        "url": "https://rjwoodtrading.com/products",
+                        "itemListElement": products.map((prod, i) => ({
+                            "@type": "ListItem",
+                            "position": i + 1,
+                            "name": prod.title,
+                            "description": prod.description
+                        }))
+                    }
+                ]}
+            />
 
             {/* Modal Overlay */}
             {selectedImage && (
@@ -188,7 +210,7 @@ const Products = () => {
             </section>
 
             {/* Grid Layout */}
-            <section ref={gridRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <section ref={gridRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-12 md:gap-y-16">
                     {products.map((prod, i) => (
                         <div key={i} className="product-card group flex flex-col opacity-0">
@@ -222,6 +244,28 @@ const Products = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="max-w-4xl mx-auto px-6 text-center pb-8">
+                <div className="bg-brand-cream rounded-3xl p-12 border border-brand-charcoal/5">
+                    <p className="font-mono text-brand-clay tracking-widest uppercase text-sm font-medium mb-4">
+                        Ready to Source?
+                    </p>
+                    <h2 className="text-3xl md:text-4xl font-display italic text-brand-charcoal mb-4">
+                        Get a Custom Timber Quote
+                    </h2>
+                    <p className="text-brand-charcoal/70 font-sans leading-relaxed max-w-xl mx-auto mb-8">
+                        Tell us your species, dimensions, and volume. Our team will respond with a tailored proposal and timeline.
+                    </p>
+                    <Link
+                        to="/quote"
+                        className="inline-flex items-center gap-3 bg-brand-clay text-white px-8 py-4 rounded-full font-sans font-medium hover:bg-[#a64526] transition-colors shadow-lg shadow-brand-clay/20"
+                    >
+                        Request a Quote
+                        <ArrowRight size={20} />
+                    </Link>
                 </div>
             </section>
 

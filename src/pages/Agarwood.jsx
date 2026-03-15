@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Droplet, Sparkles, Wind, ArrowRight } from 'lucide-react';
@@ -38,6 +39,12 @@ const Agarwood = () => {
 
     return (
         <div className="w-full bg-[#1A1A1A] text-brand-cream pt-32 pb-24 min-h-screen selection:bg-brand-clay selection:text-white">
+            <SEO
+                title="Pure Agarwood Oil"
+                description="Premium agarwood essential oil from private Malaccensis tree plantations in Malaysia. Nature's liquid gold — pure, potent, and sustainably produced."
+                canonical="/agarwood"
+                image="/agarwood-oil.jpg"
+            />
 
             {/* Hero Section */}
             <section ref={headerRef} className="max-w-6xl mx-auto px-6 md:px-12 text-center mb-32 relative opacity-0">

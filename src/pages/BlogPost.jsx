@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import { client, urlFor } from '../lib/sanity';
@@ -56,6 +57,22 @@ const BlogPost = () => {
 
     return (
         <article className="w-full bg-brand-surface pt-32 pb-24 min-h-screen">
+            <SEO
+                title={post.title}
+                description={post.excerpt}
+                canonical={`/blog/${post.slug.current}`}
+                image={post.mainImage ? urlFor(post.mainImage).width(1200).url() : undefined}
+                schema={{
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "description": post.excerpt,
+                    "datePublished": post.publishedAt,
+                    "image": post.mainImage ? urlFor(post.mainImage).width(1200).url() : undefined,
+                    "author": { "@type": "Organization", "name": "R&J Wood Trading" },
+                    "publisher": { "@type": "Organization", "name": "R&J Wood Trading", "url": "https://rjwoodtrading.com" }
+                }}
+            />
             <div className="max-w-4xl mx-auto px-6 md:px-12 post-content opacity-0">
                 {/* Back Link */}
                 <Link to="/blog" className="inline-flex items-center gap-2 text-brand-clay font-mono text-sm uppercase tracking-widest mb-12 hover:text-brand-moss transition-colors group">

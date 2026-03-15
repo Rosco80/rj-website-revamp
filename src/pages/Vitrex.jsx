@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { ShieldCheck, Leaf, Target, Award, Globe, LeafyGreen, TreePine, Warehouse, Brush } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -22,6 +23,11 @@ const Vitrex = () => {
 
     return (
         <div className="w-full bg-brand-cream pt-32 pb-24">
+            <SEO
+                title="Vitrex Timber Industries"
+                description="Vitrex Timber Industries Sdn. Bhd. — R&J's sister company operating sustainable teak and hardwood plantations in Kelantan, Malaysia since 1991."
+                canonical="/vitrex"
+            />
             {/* Hero Section */}
             <section className="vitrex-hero max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32 text-center md:text-left">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
