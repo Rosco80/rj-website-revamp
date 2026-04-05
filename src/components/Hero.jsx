@@ -55,15 +55,15 @@ const Hero = () => {
                     </p>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl text-brand-charcoal leading-tight">
                         <div className="overflow-hidden">
-                            <span ref={title1Ref} className="block font-sans font-medium tracking-tight">Sustainability is</span>
+                            <span ref={title1Ref} className="block font-sans font-medium tracking-tight">Preserving heritage through</span>
                         </div>
                         <div className="overflow-hidden">
-                            <span ref={title2Ref} className="block font-display italic text-brand-moss mt-2">the Foundation.</span>
+                            <span ref={title2Ref} className="block font-display italic text-brand-moss mt-2">ethical timber.</span>
                         </div>
                     </h1>
                     <div className="mt-4 max-w-lg">
                         <p className="font-sans text-brand-charcoal/80 text-lg leading-relaxed">
-                            Sourced directly from our own plantations through our sister company, <span className="font-medium text-brand-clay">Vitrex Timber Industries Sdn. Bhd.</span>, ensuring unmatched quality and absolute traceability.
+                            Sourced directly from our managed reserves via <span className="font-medium text-brand-clay">Vitrex Timber Industries</span>. Supplying export-grade hardwoods compliant with strict MGR parameters, defined air-dry densities, and absolute supply chain traceability.
                         </p>
                     </div>
                 </div>

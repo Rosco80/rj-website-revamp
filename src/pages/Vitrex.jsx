@@ -27,6 +27,26 @@ const Vitrex = () => {
                 title="Vitrex Timber Industries"
                 description="Vitrex Timber Industries Sdn. Bhd. — R&J's sister company operating sustainable teak and hardwood plantations in Kelantan, Malaysia since 1991."
                 canonical="/vitrex"
+                schemas={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Vitrex Timber Industries Sdn. Bhd.",
+                        "foundingDate": "1991",
+                        "description": "Sustainable timber harvesting and plantation management operating in Kelantan State, Malaysia.",
+                        "knowsAbout": ["Sustainable Forestry", "Teak Plantations", "Malaysian Hardwoods", "Balau", "Merbau", "Keruing", "PEFC Standards"],
+                        "parentOrganization": {
+                            "@type": "Organization",
+                            "name": "R&J Wood Trading",
+                            "url": "https://rjwoodtrading.com"
+                        },
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressRegion": "Kelantan",
+                            "addressCountry": "MY"
+                        }
+                    }
+                ]}
             />
             {/* Hero Section */}
             <section className="vitrex-hero max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32 text-center md:text-left">

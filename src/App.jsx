@@ -8,6 +8,8 @@ import BackToTop from './components/BackToTop';
 // Lazy-load non-critical routes to reduce initial bundle size
 const Vitrex = lazy(() => import('./pages/Vitrex'));
 const Products = lazy(() => import('./pages/Products'));
+const Species = lazy(() => import('./pages/Species'));
+const ExportRegion = lazy(() => import('./pages/ExportRegion'));
 const Agarwood = lazy(() => import('./pages/Agarwood'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
@@ -39,6 +41,8 @@ function AppContent() {
             <Route path="/" element={<Home />} />
             <Route path="/vitrex" element={<Vitrex />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<Species />} />
+            <Route path="/export/:region" element={<ExportRegion />} />
             <Route path="/agarwood" element={<Agarwood />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

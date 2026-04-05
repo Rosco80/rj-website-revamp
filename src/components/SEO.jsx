@@ -12,17 +12,47 @@ export default function SEO({ title, description, canonical, image, schema, sche
     const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : null
 
     // Normalise: always work with an array
-    const schemaList = schemas
+    const customSchemas = schemas
         ? schemas
         : schema
             ? [schema]
             : []
+
+    // Base Architecture for AEO: Every page has a Breadcrumb List (unless it's homepage)
+    const urlPath = canonical ? canonical.split('/').filter(Boolean) : [];
+    const breadcrumbSchema = urlPath.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": SITE_URL
+            },
+            ...urlPath.map((pathChunk, index) => ({
+                "@type": "ListItem",
+                "position": index + 2,
+                "name": pathChunk.charAt(0).toUpperCase() + pathChunk.slice(1),
+                "item": `${SITE_URL}/${urlPath.slice(0, index + 1).join('/')}`
+            }))
+        ]
+    } : null;
+
+    const finalSchemas = [...customSchemas];
+    if (breadcrumbSchema) {
+        finalSchemas.push(breadcrumbSchema);
+    }
 
     return (
         <Helmet>
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
+            {/* GEO Targeting: Global Fallback since we don't use localized subdirectories */}
+            {canonicalUrl && <link rel="alternate" hreflang="en" href={canonicalUrl} />}
+            {canonicalUrl && <link rel="alternate" hreflang="x-default" href={canonicalUrl} />}
 
             {/* Open Graph */}
             <meta property="og:title" content={fullTitle} />
@@ -39,7 +69,7 @@ export default function SEO({ title, description, canonical, image, schema, sche
             <meta name="twitter:image" content={metaImage} />
 
             {/* JSON-LD Structured Data — one block per schema */}
-            {schemaList.map((s, i) => (
+            {finalSchemas.map((s, i) => (
                 <script key={i} type="application/ld+json">
                     {JSON.stringify(s)}
                 </script>

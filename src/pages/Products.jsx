@@ -140,15 +140,20 @@ const Products = () => {
                 schemas={[
                     {
                         "@context": "https://schema.org",
-                        "@type": "ItemList",
+                        "@type": "CollectionPage",
                         "name": "Timber Products — R&J Wood Trading",
-                        "description": "Complete range of sustainably sourced Malaysian hardwoods for construction, furniture, and flooring.",
+                        "description": "Complete range of sustainably sourced Malaysian hardwoods including Balau, Merbau, Keruing, and Teak for construction, furniture, and flooring.",
                         "url": "https://rjwoodtrading.com/products",
-                        "itemListElement": products.map((prod, i) => ({
-                            "@type": "ListItem",
-                            "position": i + 1,
-                            "name": prod.title,
-                            "description": prod.description
+                        "hasPart": products.map((prod, i) => ({
+                            "@type": "Product",
+                            "name": `${prod.title} - Sawn Timber`,
+                            "description": prod.description,
+                            "category": prod.category,
+                            "material": ["Balau", "Merbau", "Keruing", "Teak"],
+                            "countryOfOrigin": {
+                                "@type": "Country",
+                                "name": "Malaysia"
+                            }
                         }))
                     }
                 ]}
@@ -192,24 +197,33 @@ const Products = () => {
                 </p>
             </section>
 
-            {/* Featured Wide Image */}
-            <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 mb-24 product-card">
-                <div className="w-full h-[50vh] md:h-[60vh] rounded-[2rem] overflow-hidden relative shadow-2xl">
-                    <img
-                        src="/hero-products.png"
-                        alt="Stacked Vitrex Timber Industries Logs"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-moss/80 via-transparent to-transparent flex items-end p-8 md:p-12">
-                        <div className="max-w-xl text-white">
-                            <p className="font-mono text-brand-cream/80 text-sm tracking-widest mb-2 uppercase">Signature Collection</p>
-                            <h2 className="text-3xl md:text-4xl font-sans font-medium">Responsibly Managed Plantations</h2>
-                        </div>
+            {/* Featured Species SEO Silos */}
+            <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-24 product-card">
+                <div className="flex flex-col md:flex-row gap-12 items-center mb-12">
+                    <div className="flex-1">
+                        <h2 className="text-3xl md:text-4xl font-display font-medium text-brand-charcoal mb-4">Export-Grade Sawn Timber</h2>
+                        <p className="text-brand-charcoal/70 font-sans leading-relaxed">Direct from Malaysian managed reserves. Explore our globally verifiable, PEFC-compliant hardwoods designed specifically for extreme architectural demands.</p>
                     </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                        { title: 'Balau', subtitle: 'Extreme Coastal Durability', to: '/products/balau' },
+                        { title: 'Merbau', subtitle: 'Luxury Joinery & Flooring', to: '/products/merbau' },
+                        { title: 'Teak', subtitle: 'Premium Marine Grade', to: '/products/teak' },
+                    ].map((silo, i) => (
+                        <Link key={i} to={silo.to} className="group block bg-brand-cream border border-brand-charcoal/10 hover:border-brand-clay rounded-2xl p-8 transition-colors">
+                            <h3 className="text-2xl font-sans font-medium text-brand-charcoal mb-2 group-hover:text-brand-moss transition-colors">{silo.title}</h3>
+                            <p className="font-mono text-brand-clay text-xs tracking-widest uppercase mb-6">{silo.subtitle}</p>
+                            <span className="text-sm font-medium flex items-center gap-2 text-brand-charcoal/60 group-hover:text-brand-clay transition-colors">
+                                View Technical Specs <ArrowRight size={16} />
+                            </span>
+                        </Link>
+                    ))}
                 </div>
             </section>
 
-            {/* Grid Layout */}
+            {/* General Categories Grid Layout */}
             <section ref={gridRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-12 md:gap-y-16">
                     {products.map((prod, i) => (

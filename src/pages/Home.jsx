@@ -11,23 +11,28 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
     {
         question: "What timber species does R&J Wood Trading supply?",
-        answer: "We supply a comprehensive range of premium Malaysian hardwoods including Balau, Merbau, Keruing, and Teak. These are available as heavy hardwood, medium hardwood, light hardwood, mixed hardwood, plywood, and hardwood flooring. All species are responsibly sourced through our sister company, Vitrex Timber Industries Sdn. Bhd."
+        answerText: "We supply a comprehensive range of premium Malaysian hardwoods including Balau, Merbau, Keruing, and Teak. These are available as heavy hardwood, medium hardwood, light hardwood, mixed hardwood, plywood, and hardwood flooring. All species are responsibly sourced through our sister company, Vitrex Timber Industries Sdn. Bhd.",
+        answer: <>We supply a comprehensive range of premium Malaysian hardwoods including <Link to="/products/balau" className="text-brand-clay font-medium hover:underline">Balau</Link>, <Link to="/products/merbau" className="text-brand-clay font-medium hover:underline">Merbau</Link>, Keruing, and <Link to="/products/teak" className="text-brand-clay font-medium hover:underline">Teak</Link>. These are available as heavy hardwood, medium hardwood, light hardwood, mixed hardwood, plywood, and hardwood flooring. All species are responsibly sourced through our sister company, Vitrex Timber Industries Sdn. Bhd.</>
     },
     {
         question: "Is your timber FSC or PEFC certified?",
-        answer: "R&J Wood Trading is actively pursuing FSC certification and adheres to PEFC standards through our sister company Vitrex Timber Industries. We practice selective harvesting (trees must be 100cm+ in diameter), have replanted over 500 hectares in the past five years, and maintain full supply chain traceability from forest to final delivery."
+        answerText: "R&J Wood Trading is actively pursuing FSC certification and adheres to PEFC standards through our sister company Vitrex Timber Industries. We practice selective harvesting (trees must be 100cm+ in diameter), have replanted over 500 hectares in the past five years, and maintain full supply chain traceability from forest to final delivery.",
+        answer: <>R&J Wood Trading is actively pursuing FSC certification and adheres to PEFC standards through our sister company <Link to="/vitrex" className="text-brand-clay font-medium hover:underline">Vitrex Timber Industries</Link>. We practice selective harvesting (trees must be 100cm+ in diameter), have replanted over 500 hectares in the past five years, and maintain full supply chain traceability from forest to final delivery.</>
     },
     {
         question: "Do you ship timber internationally?",
-        answer: "Yes. We supply clients globally with reliable, timely international shipping. Our operations are based in Kelantan, Malaysia, and we export to markets across Europe, North America, the Middle East, and East Asia. Contact us via the quote form to discuss specific shipping requirements for your region."
+        answerText: "Yes. We supply clients globally with reliable, timely international shipping. Our operations are based in Kelantan, Malaysia, and we export to markets across Europe, North America, the Middle East, and East Asia. Contact us via the quote form to discuss specific shipping requirements for your region.",
+        answer: <>Yes. We supply clients globally with reliable, timely international shipping. Our operations are based in Kelantan, Malaysia, and we export to markets across Europe, North America, the Middle East, and East Asia. Contact us via the <Link to="/quote" className="text-brand-clay font-medium hover:underline">quote form</Link> to discuss specific shipping requirements for your region.</>
     },
     {
         question: "What is the difference between Balau and Merbau timber?",
-        answer: "Balau is an extremely dense, high-durability hardwood ideal for heavy structural applications, decking, and marine uses. Merbau is slightly less dense but highly workable, with a richer reddish-brown colour — making it a popular choice for flooring, furniture, and interior joinery. Both are sustainably sourced from our managed Malaysian plantations."
+        answerText: "Balau is an extremely dense, high-durability hardwood ideal for heavy structural applications, decking, and marine uses. Merbau is slightly less dense but highly workable, with a richer reddish-brown colour — making it a popular choice for flooring, furniture, and interior joinery. Both are sustainably sourced from our managed Malaysian plantations.",
+        answer: <><Link to="/products/balau" className="text-brand-clay font-medium hover:underline">Balau</Link> is an extremely dense, high-durability hardwood ideal for heavy structural applications, decking, and marine uses. <Link to="/products/merbau" className="text-brand-clay font-medium hover:underline">Merbau</Link> is slightly less dense but highly workable, with a richer reddish-brown colour — making it a popular choice for flooring, furniture, and interior joinery. Both are sustainably sourced from our managed Malaysian <Link to="/vitrex" className="text-brand-clay font-medium hover:underline">plantations</Link>.</>
     },
     {
         question: "How can I request a custom timber quote?",
-        answer: "You can submit your project requirements through our Request a Quote page. Our team will review your specifications — timber species, dimensions, volume, and delivery requirements — and respond with a tailored proposal. You can also reach us directly at info@rjwoodtrading.com."
+        answerText: "You can submit your project requirements through our Request a Quote page. Our team will review your specifications — timber species, dimensions, volume, and delivery requirements — and respond with a tailored proposal. You can also reach us directly at info@rjwoodtrading.com.",
+        answer: <>You can submit your project requirements through our <Link to="/quote" className="text-brand-clay font-medium hover:underline">Request a Quote</Link> page. Our team will review your specifications — timber species, dimensions, volume, and delivery requirements — and respond with a tailored proposal. You can also reach us directly at <a href="mailto:info@rjwoodtrading.com" className="text-brand-clay font-medium hover:underline">info@rjwoodtrading.com</a>.</>
     }
 ];
 
@@ -68,7 +73,7 @@ const homeSchemas = [
         "mainEntity": faqs.map(faq => ({
             "@type": "Question",
             "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answerText }
         }))
     }
 ];

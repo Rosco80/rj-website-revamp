@@ -63,19 +63,28 @@ const About = () => {
                 schemas={[
                     {
                         "@context": "https://schema.org",
-                        "@type": "Person",
-                        "name": "Andrea Rossi",
-                        "jobTitle": "Sales & Customer Relations",
-                        "email": "andrea@rjwoodtrading.com",
-                        "worksFor": { "@type": "Organization", "name": "R&J Wood Trading", "url": "https://rjwoodtrading.com" }
-                    },
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "Person",
-                        "name": "Firmin Rieu",
-                        "jobTitle": "Director",
-                        "email": "firmin@rjwoodtrading.com",
-                        "worksFor": { "@type": "Organization", "name": "R&J Wood Trading", "url": "https://rjwoodtrading.com" }
+                        "@type": ["AboutPage", "ProfilePage"],
+                        "name": "About R&J Wood Trading",
+                        "description": "R&J International Trading is a Franco-Malaysian timber company committed to sustainable forestry, quality hardwoods, and reliable global delivery with over 30 years of industry experience.",
+                        "mainEntity": {
+                            "@type": "Organization",
+                            "name": "R&J Wood Trading",
+                            "foundingDate": "1991",
+                            "employee": [
+                                {
+                                    "@type": "Person",
+                                    "name": "Andrea Rossi",
+                                    "jobTitle": "Sales & Customer Relations",
+                                    "email": "andrea@rjwoodtrading.com"
+                                },
+                                {
+                                    "@type": "Person",
+                                    "name": "Firmin Rieu",
+                                    "jobTitle": "Director",
+                                    "email": "firmin@rjwoodtrading.com"
+                                }
+                            ]
+                        }
                     }
                 ]}
             />
