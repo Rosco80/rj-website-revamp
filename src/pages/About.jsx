@@ -41,14 +41,14 @@ const About = () => {
         {
             name: "Andrea Rossi",
             role: "Sales & Customer Relations",
-            email: "andrea@rjwoodtrading.com",
+            email: "rjwoodtradings@gmail.com",
             phone: "+6011-1431 0063",
             image: "/andrea.png"
         },
         {
             name: "Firmin Rieu",
             role: "Director",
-            email: "firmin@rjwoodtrading.com",
+            email: "rjwoodtradings@gmail.com",
             phone: "+60 11-6972 2994",
             image: "/firmin.png"
         }
@@ -177,7 +177,7 @@ const About = () => {
                             <div className="space-y-3">
                                 <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-brand-charcoal/60 hover:text-brand-moss transition-colors">
                                     <Mail size={18} />
-                                    {member.email}
+                                    Send Email
                                 </a>
                                 <div className="flex items-center gap-3 text-brand-charcoal/60">
                                     <Phone size={18} />

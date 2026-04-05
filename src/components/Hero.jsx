@@ -54,10 +54,10 @@ const Hero = () => {
                         R&J Wood Trading — Sustainable Malaysian Timber
                     </p>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl text-brand-charcoal leading-tight">
-                        <div className="overflow-hidden">
+                        <div className="overflow-hidden pb-4 -mb-4">
                             <span ref={title1Ref} className="block font-sans font-medium tracking-tight">Preserving heritage through</span>
                         </div>
-                        <div className="overflow-hidden">
+                        <div className="overflow-hidden pt-4 -mt-4">
                             <span ref={title2Ref} className="block font-display italic text-brand-moss mt-2">ethical timber.</span>
                         </div>
                     </h1>
