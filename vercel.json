@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        { "source": "/home", "destination": "/", "permanent": true },
+        { "source": "/vitrex-timber-industries", "destination": "/vitrex", "permanent": true },
+        { "source": "/about-us", "destination": "/about", "permanent": true },
+        { "source": "/services", "destination": "/products", "permanent": true },
+        { "source": "/naLogImpressions", "destination": "/", "permanent": true }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",
