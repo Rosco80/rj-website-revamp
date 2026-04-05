@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/Andrea/\"R&J Website revamp\" -type f -name \"*.json\")",
+      "Bash(ls -la \"/c/Users/Andrea/R&J Website revamp/\")",
+      "Bash(find \"/c/Users/Andrea/R&J Website revamp\" -type f \\\\\\( -name \"sanity.*\" -o -name \".env*\" \\\\\\))",
+      "Bash(find \"/c/Users/Andrea/R&J Website revamp/studio\" -type f -name \"*.js\" -o -name \"*.ts\" -o -name \"*.jsx\" -o -name \"*.tsx\")",
+      "Bash(ls -la \"/c/Users/Andrea/R&J Website revamp/studio/\")",
+      "Bash(ls -la \"/c/Users/Andrea/R&J Website revamp/src/\")",
+      "Bash(find \"/c/Users/Andrea/R&J Website revamp\" -type f \\\\\\( -name \"vite.config.*\" -o -name \".env*\" \\\\\\))",
+      "Bash(find \"/c/Users/Andrea/R&J Website revamp/src/lib\" -type f)",
+      "Bash(ls -la \"/c/Users/Andrea/R&J Website revamp/studio/schemas/\")",
+      "Bash(head -50 \"/c/Users/Andrea/R&J Website revamp/src/pages/Home.jsx\")"
+    ]
+  }
+}
