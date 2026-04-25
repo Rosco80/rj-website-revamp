@@ -48,13 +48,7 @@ const trustStats = [
 const homeSchemas = [
     {
         "@context": "https://schema.org",
-        "@type": ["Organization", "LocalBusiness"],
-        "name": "R&J Wood Trading",
-        "url": "https://rjwoodtrading.com",
-        "description": "Premium sustainable Malaysian timber supplier — Balau, Merbau, Keruing and Teak from certified Malaysian forests.",
-        "email": "info@rjwoodtrading.com",
-        "address": { "@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Kelantan" },
-        "sameAs": []
+        "@id": "https://rjwoodtrading.com/#organization"
     },
     {
         "@context": "https://schema.org",
