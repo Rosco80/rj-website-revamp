@@ -7,17 +7,7 @@ import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Note: Google Drive view links need to be converted to user content urls for img tags, 
-// using the direct file ID extraction trick: https://drive.google.com/thumbnail?id=<FILE_ID>&sz=w1000
-const getDriveImgUrl = (url) => {
-    const match = url.match(/\/d\/(.*?)\/view/);
-    if (match && match[1]) {
-        return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1000`;
-    }
-    return url;
-};
-
-const products = [
+const timberProducts = [
     {
         title: "Heavy Hardwood",
         category: "Structural Timber",
@@ -62,12 +52,56 @@ const products = [
     }
 ];
 
+const furnitureProducts = [
+    {
+        title: "Modern Minimalist Bench",
+        category: "Premium Furniture",
+        image: "/products/furniture_lifestyle_1.png",
+        description: "Sustainably crafted from high-grade Merbau, offering clean lines and robust durability for modern living spaces."
+    },
+    {
+        title: "Artisan Wood Coffee Table",
+        category: "Bespoke Furniture",
+        image: "/products/furniture_lifestyle_2.png",
+        description: "A beautifully polished centerpiece showcasing the natural grain and rich tones of Malaysian hardwood."
+    },
+    {
+        title: "Elegant Dining Set",
+        category: "Dining Furniture",
+        image: "/products/furniture_lifestyle_3.png",
+        description: "Luxurious, solid wood dining pieces crafted with precision, designed to be heirlooms."
+    }
+];
+
+const flooringProducts = [
+    {
+        title: "Balau Parquet Flooring",
+        category: "Interior Flooring",
+        image: "/products/flooring_lifestyle_1.png",
+        description: "Warm, inviting, and incredibly durable. Our Balau flooring brings nature's resilience indoors."
+    },
+    {
+        title: "Merbau Wide Plank Flooring",
+        category: "Interior Flooring",
+        image: "/products/flooring_lifestyle_2.png",
+        description: "Rich, dark tones with stunning grain patterns that elevate any contemporary or classic room."
+    },
+    {
+        title: "Teak Herringbone Pattern",
+        category: "Premium Flooring",
+        image: "/products/flooring_lifestyle_3.png",
+        description: "Timeless elegance meets modern installation. Sustainably sourced Teak in a classic herringbone layout."
+    }
+];
+
 const Products = () => {
     const headerRef = useRef(null);
-    const gridRef = useRef(null);
+    const [activeTab, setActiveTab] = useState('Timber');
     const [selectedImage, setSelectedImage] = useState(null);
     const modalRef = useRef(null);
     const modalImageRef = useRef(null);
+
+    const activeProducts = activeTab === 'Timber' ? timberProducts : activeTab === 'Furniture' ? furnitureProducts : flooringProducts;
 
     useEffect(() => {
         // Header Animation
@@ -75,25 +109,22 @@ const Products = () => {
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
         );
-
-        // Staggered Grid Animation
-        const cards = gsap.utils.toArray('.product-card');
-        cards.forEach((card, index) => {
-            gsap.fromTo(card,
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1, y: 0,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 85%",
-                        toggleActions: "play none none reverse",
-                    }
-                }
-            );
-        });
     }, []);
+
+    // Animate grid items when tab changes
+    useEffect(() => {
+        gsap.fromTo('.product-card',
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1, y: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "power2.out",
+                clearProps: "all"
+            }
+        );
+        ScrollTrigger.refresh();
+    }, [activeTab]);
 
     // Modal fade in/out animations
     useEffect(() => {
@@ -134,27 +165,16 @@ const Products = () => {
     return (
         <div className="w-full bg-brand-surface pt-32 pb-24 min-h-screen">
             <SEO
-                title="Our Products"
-                description="Explore R&J Wood Trading's complete range of sustainable Malaysian timber — heavy hardwood, medium hardwood, light hardwood, mixed hardwood, plywood, and hardwood flooring."
+                title="Our Products & Portfolio"
+                description="Explore R&J Wood Trading's complete range of sustainable Malaysian timber, premium furniture, and bespoke flooring solutions."
                 canonical="/products"
                 schemas={[
                     {
                         "@context": "https://schema.org",
                         "@type": "CollectionPage",
-                        "name": "Timber Products — R&J Wood Trading",
-                        "description": "Complete range of sustainably sourced Malaysian hardwoods including Balau, Merbau, Keruing, and Teak for construction, furniture, and flooring.",
-                        "url": "https://rjwoodtrading.com/products",
-                        "hasPart": products.map((prod, i) => ({
-                            "@type": "Product",
-                            "name": `${prod.title} - Sawn Timber`,
-                            "description": prod.description,
-                            "category": prod.category,
-                            "material": ["Balau", "Merbau", "Keruing", "Teak"],
-                            "countryOfOrigin": {
-                                "@type": "Country",
-                                "name": "Malaysia"
-                            }
-                        }))
+                        "name": "Timber Products & Portfolio — R&J Wood Trading",
+                        "description": "Complete range of sustainably sourced Malaysian hardwoods, bespoke furniture, and flooring solutions.",
+                        "url": "https://rjwoodtrading.com/products"
                     }
                 ]}
             />
@@ -163,73 +183,71 @@ const Products = () => {
             {selectedImage && (
                 <div
                     ref={modalRef}
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-charcoal/80 p-4 md:p-8 cursor-zoom-out"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 cursor-zoom-out p-4 md:p-12"
                     onClick={closeModal}
                 >
                     <button
-                        className="absolute top-6 right-6 text-brand-cream hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-md transition-all z-[110]"
-                        onClick={(e) => { e.stopPropagation(); closeModal(); }}
+                        onClick={closeModal}
+                        className="absolute top-6 right-6 text-white hover:text-brand-clay transition-colors z-[110] bg-black/20 p-2 rounded-full backdrop-blur-md"
+                        aria-label="Close modal"
                     >
-                        <X className="w-6 h-6" />
+                        <X size={32} />
                     </button>
-
-                    <div className="w-full max-w-6xl max-h-[90vh] flex items-center justify-center cursor-default" onClick={(e) => e.stopPropagation()}>
+                    <div className="relative max-w-7xl w-full flex items-center justify-center">
                         <img
                             ref={modalImageRef}
                             src={selectedImage}
-                            alt={`${products.find(p => p.image === selectedImage)?.title || 'Product'} — full size product image`}
+                            alt={`${activeProducts.find(p => p.image === selectedImage)?.title || 'Product'} — full size product image`}
                             className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl bg-white p-4"
                         />
                     </div>
                 </div>
             )}
 
-            {/* Products Header */}
-            <section ref={headerRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-20 text-center relative opacity-0">
-                <p className="font-mono text-brand-clay tracking-widest uppercase text-sm font-medium mb-4">
-                    Our Portfolio
-                </p>
-                <h1 className="text-5xl md:text-7xl font-display italic text-brand-charcoal mb-6">
-                    Complete Product Range
-                </h1>
-                <p className="max-w-2xl mx-auto text-lg text-brand-charcoal/70 font-sans leading-relaxed">
-                    From raw, sustainably logged teak to precision-cut architectural flooring. Explore our diverse selection of premium Malaysian timber, specifically processed to meet the rigorous demands of domestic and international markets.
-                </p>
-            </section>
+            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+                
+                {/* Header Section */}
+                <div ref={headerRef} className="text-center mb-16">
+                    <p className="font-mono text-brand-moss tracking-widest uppercase text-sm font-medium mb-4">
+                        Our Portfolio
+                    </p>
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-display italic text-brand-charcoal mb-8">
+                        Premium Quality,<br className="hidden md:block" /> Sustained.
+                    </h1>
+                    <p className="max-w-2xl mx-auto text-lg text-brand-charcoal/70 font-sans leading-relaxed">
+                        From robust heavy hardwoods for construction to beautifully crafted furniture and elegant flooring, our timber is meticulously graded and sourced from managed Malaysian reserves.
+                    </p>
+                </div>
 
-            {/* Featured Species SEO Silos */}
-            <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-24 product-card">
-                <div className="flex flex-col md:flex-row gap-12 items-center mb-12">
-                    <div className="flex-1">
-                        <h2 className="text-3xl md:text-4xl font-display font-medium text-brand-charcoal mb-4">Export-Grade Sawn Timber</h2>
-                        <p className="text-brand-charcoal/70 font-sans leading-relaxed">Direct from Malaysian managed reserves. Explore our globally verifiable, PEFC-compliant hardwoods designed specifically for extreme architectural demands.</p>
+                {/* Tabs Navigation */}
+                <div className="flex justify-center mb-16">
+                    <div className="inline-flex bg-white rounded-full p-1 shadow-sm border border-brand-charcoal/5">
+                        {['Timber', 'Furniture', 'Flooring'].map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveTab(tab)}
+                                className={`px-8 py-3 rounded-full font-sans font-medium text-sm transition-all duration-300 ${
+                                    activeTab === tab
+                                        ? 'bg-brand-moss text-white shadow-md'
+                                        : 'text-brand-charcoal/60 hover:text-brand-charcoal hover:bg-brand-moss/5'
+                                }`}
+                            >
+                                {tab}
+                            </button>
+                        ))}
                     </div>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[
-                        { title: 'Balau', subtitle: 'Extreme Coastal Durability', to: '/products/balau' },
-                        { title: 'Merbau', subtitle: 'Luxury Joinery & Flooring', to: '/products/merbau' },
-                        { title: 'Teak', subtitle: 'Premium Marine Grade', to: '/products/teak' },
-                    ].map((silo, i) => (
-                        <Link key={i} to={silo.to} className="group block bg-brand-cream border border-brand-charcoal/10 hover:border-brand-clay rounded-2xl p-8 transition-colors">
-                            <h3 className="text-2xl font-sans font-medium text-brand-charcoal mb-2 group-hover:text-brand-moss transition-colors">{silo.title}</h3>
-                            <p className="font-mono text-brand-clay text-xs tracking-widest uppercase mb-6">{silo.subtitle}</p>
-                            <span className="text-sm font-medium flex items-center gap-2 text-brand-charcoal/60 group-hover:text-brand-clay transition-colors">
-                                View Technical Specs <ArrowRight size={16} />
-                            </span>
-                        </Link>
-                    ))}
-                </div>
-            </section>
 
-            {/* General Categories Grid Layout */}
-            <section ref={gridRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-12 md:gap-y-16">
-                    {products.map((prod, i) => (
-                        <div key={i} className="product-card group flex flex-col opacity-0">
+                {/* Product Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    {activeProducts.map((prod, index) => (
+                        <div
+                            key={`${activeTab}-${index}`}
+                            className="product-card group flex flex-col bg-brand-cream rounded-3xl overflow-hidden border border-brand-charcoal/5 hover:border-brand-moss/20 hover:shadow-xl transition-all duration-500"
+                        >
+                            {/* Image Container with Zoom hint */}
                             <div
-                                className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative bg-white border border-brand-charcoal/5 flex items-center justify-center p-6 shadow-sm cursor-zoom-in group/img"
+                                className="relative aspect-[4/3] overflow-hidden bg-white cursor-zoom-in"
                                 onClick={() => setSelectedImage(prod.image)}
                             >
                                 <img
@@ -241,50 +259,58 @@ const Products = () => {
                                 />
                                 {/* Darken overlay on hover */}
                                 <div className="absolute inset-0 bg-brand-charcoal/0 group-hover/img:bg-brand-charcoal/5 transition-colors duration-500"></div>
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
-                                    <div className="bg-white/90 text-brand-charcoal p-3 rounded-full shadow-lg transform translate-y-4 group-hover/img:translate-y-0 transition-transform duration-300">
-                                        <ZoomIn className="w-6 h-6" />
-                                    </div>
+                                {/* Zoom Icon */}
+                                <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    <ZoomIn size={20} />
                                 </div>
                             </div>
-                            <div className="flex flex-col flex-grow">
-                                <p className="font-mono text-brand-clay text-xs tracking-widest uppercase mb-2">
-                                    {prod.category}
-                                </p>
-                                <h3 className="text-2xl font-sans font-medium text-brand-charcoal mb-3 group-hover:text-brand-moss transition-colors">
-                                    {prod.title}
-                                </h3>
-                                <p className="text-brand-charcoal/70 font-sans leading-relaxed">
+
+                            {/* Text Content */}
+                            <div className="p-8 flex flex-col flex-grow">
+                                <div className="flex justify-between items-start mb-4">
+                                    <div>
+                                        <p className="font-mono text-brand-clay text-xs tracking-widest uppercase mb-2">
+                                            {prod.category}
+                                        </p>
+                                        <h3 className="text-2xl font-sans font-medium text-brand-charcoal group-hover:text-brand-moss transition-colors">
+                                            {prod.title}
+                                        </h3>
+                                    </div>
+                                </div>
+                                <p className="text-brand-charcoal/70 font-sans leading-relaxed text-sm mb-6 flex-grow">
                                     {prod.description}
                                 </p>
+                                
+                                {activeTab === 'Timber' ? (
+                                    <Link to="/about" className="inline-flex items-center gap-2 text-brand-moss font-medium text-sm hover:text-brand-clay transition-colors mt-auto group/link">
+                                        Learn about grading
+                                        <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                                    </Link>
+                                ) : (
+                                    <Link to="/quote" className="inline-flex items-center gap-2 text-brand-clay font-medium text-sm hover:text-[#a64526] transition-colors mt-auto group/link">
+                                        Request a bespoke quote
+                                        <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     ))}
                 </div>
-            </section>
 
-            {/* CTA */}
-            <section className="max-w-4xl mx-auto px-6 text-center pb-8">
-                <div className="bg-brand-cream rounded-3xl p-12 border border-brand-charcoal/5">
-                    <p className="font-mono text-brand-clay tracking-widest uppercase text-sm font-medium mb-4">
-                        Ready to Source?
-                    </p>
-                    <h2 className="text-3xl md:text-4xl font-display italic text-brand-charcoal mb-4">
-                        Get a Custom Timber Quote
-                    </h2>
-                    <p className="text-brand-charcoal/70 font-sans leading-relaxed max-w-xl mx-auto mb-8">
-                        Tell us your species, dimensions, and volume. Our team will respond with a tailored proposal and timeline.
+                {/* Bottom CTA */}
+                <div className="mt-24 text-center">
+                    <p className="text-brand-charcoal/60 font-sans mb-6">
+                        Need detailed specifications or PEFC certification documents?
                     </p>
                     <Link
                         to="/quote"
-                        className="inline-flex items-center gap-3 bg-brand-clay text-white px-8 py-4 rounded-full font-sans font-medium hover:bg-[#a64526] transition-colors shadow-lg shadow-brand-clay/20"
+                        className="inline-flex items-center gap-3 bg-brand-charcoal text-brand-cream px-8 py-4 rounded-full font-sans font-medium hover:bg-brand-moss transition-colors"
                     >
-                        Request a Quote
+                        Contact Sales Team
                         <ArrowRight size={20} />
                     </Link>
                 </div>
-            </section>
-
+            </div>
         </div>
     );
 };
