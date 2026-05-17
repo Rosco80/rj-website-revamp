@@ -101,7 +101,8 @@ const BlogPost = () => {
                     <figure className="w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 shadow-lg border border-brand-charcoal/5">
                         <img
                             src={urlFor(post.mainImage).width(1600).url()}
-                            alt={post.title}
+                            alt={`Featured image for ${post.title}`}
+                            title={post.title}
                             className="w-full h-full object-cover"
                         />
                     </figure>

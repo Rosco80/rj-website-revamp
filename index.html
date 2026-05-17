@@ -2,16 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRJCDVZ2KB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-SRJCDVZ2KB');
-  </script>
-
   <meta charset="UTF-8" />
   <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
   <link rel="preload" as="image" href="/hero-home.jpg" fetchpriority="high" />
@@ -27,14 +17,14 @@
   <meta property="og:site_name" content="R&J Wood Trading" />
   <meta property="og:title" content="R&J Wood Trading - Sustainable Timber Supplier Malaysia" />
   <meta property="og:description" content="Premium, sustainably sourced Malaysian hardwoods with full supply chain traceability. Balau, Merbau, Keruing and Teak. Global delivery." />
-  <meta property="og:image" content="/hero-home.jpg" />
+  <meta property="og:image" content="https://rjwoodtrading.com/hero-home.jpg" />
   <meta property="og:url" content="https://rjwoodtrading.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="R&J Wood Trading - Sustainable Timber Supplier Malaysia" />
   <meta name="twitter:description" content="Premium, sustainably sourced Malaysian hardwoods with full supply chain traceability." />
-  <meta name="twitter:image" content="/hero-home.jpg" />
+  <meta name="twitter:image" content="https://rjwoodtrading.com/hero-home.jpg" />
 
   <!-- Local Business / Entity Schema -->
   <script type="application/ld+json">
@@ -55,8 +45,67 @@
 </head>
 
 <body class="bg-brand-cream font-sans text-brand-charcoal overflow-x-hidden">
-  <div id="root"></div>
+  <div id="root">
+    <!-- Noscript fallback: provides crawlable content for search engines and bots that do not execute JavaScript -->
+    <noscript>
+      <header style="padding:2rem;max-width:1200px;margin:0 auto">
+        <h1>R&J Wood Trading — Sustainable Timber Supplier Malaysia</h1>
+        <p>R&J Wood Trading supplies premium, sustainably sourced Malaysian hardwoods — Balau, Merbau, Keruing and Teak. FSC/PEFC committed. Global delivery from forest to final destination.</p>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/products/balau">Balau Timber</a></li>
+            <li><a href="/products/merbau">Merbau Timber</a></li>
+            <li><a href="/products/teak">Teak Timber</a></li>
+            <li><a href="/vitrex">Vitrex Timber Industries</a></li>
+            <li><a href="/agarwood">Agarwood Oil</a></li>
+            <li><a href="/export/europe">Export to Europe</a></li>
+            <li><a href="/export/middle-east">Export to Middle East</a></li>
+            <li><a href="/blog">Insights &amp; Expertise</a></li>
+            <li><a href="/quote">Request a Quote</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main style="padding:2rem;max-width:1200px;margin:0 auto">
+        <section>
+          <h2>Our Products</h2>
+          <p>From raw, sustainably logged teak to precision-cut architectural flooring. Explore our diverse selection of premium Malaysian timber.</p>
+          <ul>
+            <li>Heavy Hardwood — Extremely durable, high-density timber for structural applications</li>
+            <li>Medium Hardwood — Balanced strength and workability for construction and decking</li>
+            <li>Light Hardwood — Premium timber for fine interior joinery and paneling</li>
+            <li>Mixed Hardwood — Selected species for general construction value</li>
+            <li>Plywood — Sustainably bonded plywood for structural and decorative use</li>
+            <li>Hardwood Flooring — Elegant flooring with rich organic textures</li>
+            <li><a href="/agarwood">Agarwood Oil</a> — Pure essential oil from Aquilaria Malaccensis</li>
+          </ul>
+        </section>
+        <section>
+          <h2>About R&J Wood Trading</h2>
+          <p>R&J International Trading is a Franco-Malaysian timber company committed to sustainable forestry, quality hardwoods, and reliable global delivery with over 30 years of experience. Our sister company, <a href="/vitrex">Vitrex Timber Industries Sdn. Bhd.</a>, has operated sustainable plantations in Kelantan, Malaysia since 1991.</p>
+        </section>
+        <section>
+          <h2>Contact Us</h2>
+          <p>Email: <a href="mailto:info@rjwoodtrading.com">info@rjwoodtrading.com</a></p>
+          <p>Phone: <a href="tel:+60111-4310063">+6011-1431 0063</a></p>
+          <p>Address: J-6-2, Soho KL, Jalan Solaris, 50480 Kuala Lumpur, Malaysia</p>
+          <p><a href="/quote">Request a Custom Timber Quote</a></p>
+        </section>
+      </main>
+    </noscript>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Google Analytics — loaded after page content to avoid render-blocking -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-SRJCDVZ2KB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRJCDVZ2KB');
+  </script>
 </body>
 
 </html>

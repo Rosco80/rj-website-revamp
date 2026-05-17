@@ -125,7 +125,7 @@ const About = () => {
                                     </div>
                                     <div className="flex gap-4 items-center text-brand-charcoal/70">
                                         <ShieldCheck className="text-brand-clay" size={24} />
-                                        <span>Strict diameter thresholds (100cm+) for harvestingth</span>
+                                        <span>Strict diameter thresholds (100cm+) for harvesting</span>
                                     </div>
                                     <div className="flex gap-4 items-center text-brand-charcoal/70">
                                         <Heart className="text-brand-clay" size={24} />
@@ -145,7 +145,7 @@ const About = () => {
                             <p className="text-brand-cream/70 leading-relaxed mb-10 relative">
                                 R&J Trading manages the sales and exports of Vitrex Timber Industries high-quality timber products, delivering exceptional service to clients globally.
                             </p>
-                            <Link to="/#contact" className="inline-flex items-center gap-2 text-brand-clay font-medium hover:text-white transition-colors">
+                            <Link to="/quote" className="inline-flex items-center gap-2 text-brand-clay font-medium hover:text-white transition-colors">
                                 Contact our logistics team
                                 <Globe size={18} />
                             </Link>
@@ -167,8 +167,10 @@ const About = () => {
                             <div className="relative aspect-square rounded-[2.5rem] overflow-hidden mb-8 shadow-xl bg-white p-8">
                                 <img
                                     src={member.image}
-                                    alt={member.name}
+                                    alt={`${member.name} — ${member.role} at R&J Wood Trading`}
+                                    title={`${member.name} — ${member.role}`}
                                     className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                                    loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-brand-moss/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                             </div>

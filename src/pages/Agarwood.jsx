@@ -44,6 +44,23 @@ const Agarwood = () => {
                 description="Premium agarwood essential oil from private Malaccensis tree plantations in Malaysia. Nature's liquid gold — pure, potent, and sustainably produced."
                 canonical="/agarwood"
                 image="/agarwood-oil.jpg"
+                schemas={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": "Pure Agarwood Essential Oil (Oud)",
+                        "description": "Premium agarwood essential oil distilled from Aquilaria Malaccensis trees, sustainably cultivated in private Malaysian plantations. Nature's liquid gold — pure, potent, and ethically produced.",
+                        "brand": { "@type": "Brand", "name": "R&J Wood Trading" },
+                        "material": "Aquilaria Malaccensis",
+                        "countryOfOrigin": { "@type": "Country", "name": "Malaysia" },
+                        "image": "https://rjwoodtrading.com/agarwood-oil.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "availability": "https://schema.org/InStock",
+                            "url": "https://rjwoodtrading.com/quote"
+                        }
+                    }
+                ]}
             />
 
             {/* Hero Section */}
@@ -65,8 +82,10 @@ const Agarwood = () => {
                     <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden">
                         <img
                             src="/agarwood-oil.jpg"
-                            alt="Pouring essential oil"
+                            alt="Pure Malaysian Agarwood essential oil from Aquilaria Malaccensis plantations"
+                            title="R&J Wood Trading — Premium Agarwood Oil"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent mix-blend-multiply"></div>
                     </div>

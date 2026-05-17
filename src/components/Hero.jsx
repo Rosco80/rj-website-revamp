@@ -74,6 +74,7 @@ const Hero = () => {
                             ref={imageRef}
                             src="/hero-home.jpg"
                             alt="Raw Malaysian timber logs and planks"
+                            title="Sustainably sourced Malaysian hardwood — R&J Wood Trading"
                             className="w-full h-full object-cover"
                             fetchpriority="high"
                             loading="eager"

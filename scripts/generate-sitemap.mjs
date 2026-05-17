@@ -18,19 +18,22 @@ const client = createClient({
     useCdn: true,
 });
 
+const today = new Date().toISOString().split('T')[0];
+
 const staticPages = [
-    { url: '/',          changefreq: 'monthly', priority: '1.0' },
-    { url: '/about',     changefreq: 'monthly', priority: '0.8' },
-    { url: '/products',  changefreq: 'monthly', priority: '0.9' },
-    { url: '/products/balau', changefreq: 'monthly', priority: '0.9' },
-    { url: '/products/merbau', changefreq: 'monthly', priority: '0.9' },
-    { url: '/products/teak', changefreq: 'monthly', priority: '0.9' },
-    { url: '/export/europe', changefreq: 'monthly', priority: '0.9' },
-    { url: '/export/middle-east', changefreq: 'monthly', priority: '0.9' },
-    { url: '/vitrex',    changefreq: 'monthly', priority: '0.7' },
-    { url: '/agarwood',  changefreq: 'monthly', priority: '0.7' },
-    { url: '/blog',      changefreq: 'weekly',  priority: '0.8' },
-    { url: '/quote',     changefreq: 'yearly',  priority: '0.6' },
+    { url: '/',          changefreq: 'monthly', priority: '1.0', lastmod: today },
+    { url: '/about',     changefreq: 'monthly', priority: '0.8', lastmod: today },
+    { url: '/products',  changefreq: 'monthly', priority: '0.9', lastmod: today },
+    { url: '/products/balau', changefreq: 'monthly', priority: '0.9', lastmod: today },
+    { url: '/products/merbau', changefreq: 'monthly', priority: '0.9', lastmod: today },
+    { url: '/products/teak', changefreq: 'monthly', priority: '0.9', lastmod: today },
+    { url: '/export/europe', changefreq: 'monthly', priority: '0.9', lastmod: today },
+    { url: '/export/middle-east', changefreq: 'monthly', priority: '0.9', lastmod: today },
+    { url: '/vitrex',    changefreq: 'monthly', priority: '0.7', lastmod: today },
+    { url: '/agarwood',  changefreq: 'monthly', priority: '0.7', lastmod: today },
+    { url: '/blog',      changefreq: 'weekly',  priority: '0.8', lastmod: today },
+    { url: '/quote',     changefreq: 'yearly',  priority: '0.6', lastmod: today },
+    { url: '/privacy',   changefreq: 'yearly',  priority: '0.5', lastmod: today },
 ];
 
 function urlEntry({ url, changefreq, priority, lastmod }) {

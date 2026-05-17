@@ -177,7 +177,7 @@ const Products = () => {
                         <img
                             ref={modalImageRef}
                             src={selectedImage}
-                            alt="Expanded product view"
+                            alt={`${products.find(p => p.image === selectedImage)?.title || 'Product'} — full size product image`}
                             className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl bg-white p-4"
                         />
                     </div>
@@ -234,8 +234,10 @@ const Products = () => {
                             >
                                 <img
                                     src={prod.image}
-                                    alt={prod.title}
+                                    alt={`${prod.title} — sustainable Malaysian timber product`}
+                                    title={`${prod.title} from R&J Wood Trading`}
                                     className="w-full h-full object-contain transition-transform duration-700 group-hover/img:scale-105"
+                                    loading="lazy"
                                 />
                                 {/* Darken overlay on hover */}
                                 <div className="absolute inset-0 bg-brand-charcoal/0 group-hover/img:bg-brand-charcoal/5 transition-colors duration-500"></div>

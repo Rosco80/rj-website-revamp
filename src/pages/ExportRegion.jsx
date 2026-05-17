@@ -100,7 +100,7 @@ const ExportRegion = () => {
                     </div>
                     <div className="lg:col-span-5 relative">
                         <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl relative">
-                            <img src={heroImage} alt={`Timber export to ${name}`} className="w-full h-full object-cover" />
+                            <img src={heroImage} alt={`Timber export to ${name}`} title={`R&J Wood Trading — ${name} Export Hub`} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 to-transparent flex items-end p-8">
                                 <p className="text-brand-cream font-mono text-sm tracking-widest uppercase mb-2">Direct Logistics Port</p>
                             </div>

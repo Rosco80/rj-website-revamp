@@ -131,7 +131,7 @@ const Species = () => {
                         </p>
                     </div>
                     <div className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                        <img src={heroImage} alt={`${name} Timber`} className="w-full h-full object-cover" />
+                        <img src={heroImage} alt={`${name} Timber`} title={`${name} — Premium Malaysian Hardwood`} className="w-full h-full object-cover" loading="lazy" />
                         <div className="absolute inset-0 bg-brand-moss/10 mix-blend-multiply"></div>
                     </div>
                 </div>

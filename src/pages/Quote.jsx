@@ -57,7 +57,7 @@ const Quote = () => {
                 </div>
 
                 <div className="mt-12 text-center text-brand-charcoal/50 font-sans text-sm">
-                    <p>Issues with the form? Contact us directly at <span className="text-brand-moss">info@rjwoodtrading.com</span></p>
+                    <p>Issues with the form? Contact us directly at <a href="mailto:info@rjwoodtrading.com" className="text-brand-moss hover:text-brand-clay transition-colors underline">info@rjwoodtrading.com</a></p>
                 </div>
 
             </div>

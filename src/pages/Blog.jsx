@@ -64,6 +64,23 @@ const Blog = () => {
                 title="Insights & Expertise"
                 description="Explore R&J Wood Trading's latest articles on sustainable forestry, timber characteristics, industry insights, and the benefits of natural wood products."
                 canonical="/blog"
+                schemas={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "CollectionPage",
+                        "name": "Insights & Expertise",
+                        "description": "Explore R&J Wood Trading's latest articles on sustainable forestry, timber characteristics, industry insights, and the benefits of natural wood products.",
+                        "url": "https://rjwoodtrading.com/blog",
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "R&J Wood Trading",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://rjwoodtrading.com/logo.jpg"
+                            }
+                        }
+                    }
+                ]}
             />
 
             {/* SEO Optimized Header */}

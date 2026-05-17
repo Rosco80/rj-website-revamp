@@ -44,6 +44,20 @@ export default function SEO({ title, description, canonical, image, schema, sche
         finalSchemas.push(breadcrumbSchema);
     }
 
+    // SiteNavigationElement schema
+    finalSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            { "@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://rjwoodtrading.com/" },
+            { "@type": "SiteNavigationElement", "position": 2, "name": "About Us", "url": "https://rjwoodtrading.com/about" },
+            { "@type": "SiteNavigationElement", "position": 3, "name": "Products", "url": "https://rjwoodtrading.com/products" },
+            { "@type": "SiteNavigationElement", "position": 4, "name": "Vitrex Timber Industries", "url": "https://rjwoodtrading.com/vitrex" },
+            { "@type": "SiteNavigationElement", "position": 5, "name": "Agarwood", "url": "https://rjwoodtrading.com/agarwood" },
+            { "@type": "SiteNavigationElement", "position": 6, "name": "Blog", "url": "https://rjwoodtrading.com/blog" }
+        ]
+    });
+
     return (
         <Helmet>
             <title>{fullTitle}</title>

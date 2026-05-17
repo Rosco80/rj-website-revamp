@@ -22,7 +22,7 @@ const Navbar = () => {
     const navMutedColor = isDarkPage ? 'text-brand-cream/80' : 'text-brand-charcoal/80';
 
     return (
-        <nav className="absolute top-0 left-0 right-0 z-50 py-6 px-6 md:px-12 lg:px-24">
+        <nav className="absolute top-0 left-0 right-0 z-50 py-6 px-6 md:px-12 lg:px-24" aria-label="Main navigation">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 <Link to="/" className={`text-2xl font-display font-bold italic z-50 transition-colors ${navTextColor}`}>
                     R&J <span className={`font-sans not-italic font-medium text-lg transition-colors ${isDarkPage ? 'text-brand-clay' : 'text-brand-moss'}`}>Wood Trading</span>

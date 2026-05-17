@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import { ShieldCheck, Leaf, Target, Award, Globe, LeafyGreen, TreePine, Warehouse, Brush } from 'lucide-react';
+import { ShieldCheck, Leaf, Target, Award, Globe, LeafyGreen, TreePine, Warehouse, Brush, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
 const products = [
@@ -70,7 +71,9 @@ const Vitrex = () => {
                             <img
                                 src="/hero-vitrex.jpg"
                                 alt="Sustainable forestry and teak plantations in Malaysia"
+                                title="Vitrex Timber Industries — Kelantan, Malaysia"
                                 className="w-full h-full object-cover origin-center"
+                                loading="lazy"
                             />
                             <div className="absolute inset-0 bg-brand-moss/10 mix-blend-multiply transition-opacity hover:opacity-0 duration-700"></div>
                         </div>
@@ -145,9 +148,34 @@ const Vitrex = () => {
             <section className="max-w-4xl mx-auto px-6 md:px-12 pt-32 text-center text-brand-charcoal">
                 <Globe size={48} className="mx-auto text-brand-clay mb-6" strokeWidth={1} />
                 <h2 className="text-3xl md:text-4xl font-display font-medium mb-6">Our Global Reach</h2>
-                <p className="text-lg opacity-80 leading-relaxed">
-                    While our roots are in Malaysia, Vitrex Timber’s reach extends globally through our partnership with <span className="font-medium text-brand-moss">R&J Wood Trading</span>, our sister company responsible for exporting our premium timber to international markets. Together, we provide seamless service from sustainable harvesting to worldwide distribution.
+                <p className="text-lg opacity-80 leading-relaxed mb-8">
+                    While our roots are in Malaysia, Vitrex Timber&apos;s reach extends globally through our partnership with <Link to="/about" className="font-medium text-brand-moss hover:text-brand-clay transition-colors underline">R&J Wood Trading</Link>, our sister company responsible for exporting our premium timber to international markets. Together, we provide seamless service from sustainable harvesting to worldwide distribution.
                 </p>
+                <p className="text-lg opacity-80 leading-relaxed">
+                    Explore our full range of <Link to="/products" className="font-medium text-brand-clay hover:text-brand-moss transition-colors underline">export-grade timber products</Link>, including Balau, Merbau, Keruing, Teak, plywood, and hardwood flooring.
+                </p>
+            </section>
+
+            {/* CTA */}
+            <section className="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+                <div className="bg-brand-moss/5 border border-brand-moss/10 rounded-3xl p-12">
+                    <p className="font-mono text-brand-clay tracking-widest uppercase text-sm font-medium mb-4">
+                        Source Sustainably
+                    </p>
+                    <h2 className="text-3xl md:text-4xl font-display italic text-brand-charcoal mb-4">
+                        Ready to Source Premium Timber?
+                    </h2>
+                    <p className="text-brand-charcoal/70 font-sans leading-relaxed max-w-xl mx-auto mb-8">
+                        Get a tailored quote for your timber requirements. Our team typically responds within one business day.
+                    </p>
+                    <Link
+                        to="/quote"
+                        className="inline-flex items-center gap-3 bg-brand-clay text-white px-8 py-4 rounded-full font-sans font-medium hover:bg-[#a64526] transition-colors"
+                    >
+                        Request a Quote
+                        <ArrowRight size={20} />
+                    </Link>
+                </div>
             </section>
         </div>
     );
