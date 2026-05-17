@@ -54,22 +54,22 @@ const timberProducts = [
 
 const furnitureProducts = [
     {
-        title: "Modern Minimalist Bench",
+        title: "Carved Log Statement Piece",
         category: "Premium Furniture",
         image: "/products/furniture_lifestyle_1.png",
-        description: "Sustainably crafted from high-grade Merbau, offering clean lines and robust durability for modern living spaces."
+        description: "A breathtaking, hand-carved solid wood bench that brings raw, sculptural beauty into any modern living space."
     },
     {
-        title: "Artisan Wood Coffee Table",
+        title: "Traditional Canopy Bed",
         category: "Bespoke Furniture",
         image: "/products/furniture_lifestyle_2.png",
-        description: "A beautifully polished centerpiece showcasing the natural grain and rich tones of Malaysian hardwood."
+        description: "A masterfully crafted wooden bed frame featuring intricate traditional detailing and robust timber construction."
     },
     {
-        title: "Elegant Dining Set",
-        category: "Dining Furniture",
+        title: "Executive Wooden Desk",
+        category: "Office Furniture",
         image: "/products/furniture_lifestyle_3.png",
-        description: "Luxurious, solid wood dining pieces crafted with precision, designed to be heirlooms."
+        description: "A substantial, finely polished solid wood desk that commands attention, perfect for a sophisticated home office."
     }
 ];
 
