@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Leaf, ShieldCheck, TreePine } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -18,7 +19,7 @@ const features = [
         title: "Comprehensive, Custom Solutions",
         subtitle: "Responsible Supply Chain",
         icon: ShieldCheck,
-        description: "From furniture timber to planks, carefully selected to meet high standards. Tailored processing with low-impact practices ensures consistency and traceability from forest to final delivery."
+        description: <>From furniture timber to <Link to="/products" className="text-brand-clay font-medium hover:underline transition-colors">planks</Link>, carefully selected to meet high standards. Tailored processing with low-impact practices ensures consistency and traceability from forest to final delivery.</>
     },
     {
         id: 3,
@@ -74,7 +75,7 @@ const Features = () => {
                             <div className="mb-8 w-14 h-14 rounded-full bg-brand-moss/10 flex items-center justify-center text-brand-moss group-hover:scale-110 group-hover:bg-brand-moss group-hover:text-brand-cream transition-all duration-300">
                                 <feature.icon strokeWidth={1.5} size={28} />
                             </div>
-                            <p className="font-mono text-brand-clay text-xs tracking-widest uppercase mb-4 uppercase">
+                            <p className="font-mono text-brand-clay text-xs tracking-widest uppercase mb-4">
                                 {feature.subtitle}
                             </p>
                             <h3 className="text-2xl font-sans font-medium text-brand-charcoal mb-4">

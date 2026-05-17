@@ -114,7 +114,9 @@ const About = () => {
                         <div>
                             <h2 className="text-3xl md:text-4xl font-display text-brand-charcoal mb-8 border-b border-brand-charcoal/10 pb-4">Our Sister Company</h2>
                             <div className="bg-brand-moss/5 border border-brand-moss/10 p-8 rounded-3xl">
-                                <h3 className="text-2xl font-sans font-medium text-brand-moss mb-4">Vitrex Timber Industries Sdn. Bhd.</h3>
+                                <h3 className="text-2xl font-sans font-medium text-brand-moss mb-4">
+                                    <Link to="/vitrex" className="hover:text-brand-clay transition-colors underline">Vitrex Timber Industries Sdn. Bhd.</Link>
+                                </h3>
                                 <p className="text-brand-charcoal/80 leading-relaxed mb-6">
                                     Operating since 1991, Vitrex is a family-owned, Bumiputra company located in Kelantan State, Malaysia. Together, we ensure a sustainable and reliable supply of premium timber products to customers worldwide.
                                 </p>

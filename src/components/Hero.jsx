@@ -63,7 +63,7 @@ const Hero = () => {
                     </h1>
                     <div className="mt-4 max-w-lg">
                         <p className="font-sans text-brand-charcoal/80 text-lg leading-relaxed">
-                            Sourced directly from our managed reserves via <span className="font-medium text-brand-clay">Vitrex Timber Industries</span>. Supplying export-grade hardwoods compliant with strict MGR parameters, defined air-dry densities, and absolute supply chain traceability.
+                            Sourced directly from our managed reserves via <Link to="/vitrex" className="font-medium text-brand-clay hover:underline transition-colors">Vitrex Timber Industries</Link>. Supplying export-grade hardwoods compliant with strict MGR parameters, defined air-dry densities, and absolute supply chain traceability.
                         </p>
                     </div>
                 </div>

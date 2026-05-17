@@ -133,7 +133,7 @@ const Agarwood = () => {
                         For thousands of years, this mysterious essence has captivated civilizations with its complex fragrance. From the tranquil temples of Japan to the bustling souks of the Middle East, agarwood transcends ordinary essential oils.
                     </p>
                     <p className="text-lg text-brand-cream/80 font-sans leading-relaxed mb-12">
-                        At R&J Woods, we source directly from our own carefully managed <span className="text-brand-clay font-medium italic">Malaccensis</span> tree plantations. We honor the traditional extraction processes, preserving the therapeutic integrity and producing true "liquid gold."
+                        At <Link to="/" className="text-white font-medium hover:underline transition-colors">R&J Wood Trading</Link>, we source directly from our own carefully managed <span className="text-brand-clay font-medium italic">Malaccensis</span> tree plantations. We honor the traditional extraction processes, preserving the therapeutic integrity and producing true "liquid gold."
                     </p>
                 </div>
             </section>
