@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ArrowLeft } from 'lucide-react';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Quote = () => {
     const containerRef = useRef(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         gsap.fromTo(containerRef.current,
@@ -41,8 +42,25 @@ const Quote = () => {
                     </p>
                 </div>
 
-                {/* Google Form Embed */}
+                {/* Google Form Embed Container */}
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-brand-charcoal/5 min-h-[800px] relative">
+                    
+                    {isLoading && (
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-surface z-10 transition-opacity duration-500">
+                            {/* Minimalist Timber/Forest Wave Loader */}
+                            <div className="flex gap-1.5 items-end mb-6 h-12">
+                                <div className="w-1.5 bg-brand-moss/40 h-4 rounded-full animate-[pulse_1.2s_infinite_100ms]"></div>
+                                <div className="w-1.5 bg-brand-moss/60 h-8 rounded-full animate-[pulse_1.2s_infinite_300ms]"></div>
+                                <div className="w-1.5 bg-brand-moss h-12 rounded-full animate-[pulse_1.2s_infinite_500ms]"></div>
+                                <div className="w-1.5 bg-brand-moss/60 h-8 rounded-full animate-[pulse_1.2s_infinite_700ms]"></div>
+                                <div className="w-1.5 bg-brand-moss/40 h-4 rounded-full animate-[pulse_1.2s_infinite_900ms]"></div>
+                            </div>
+                            <p className="font-mono text-xs tracking-widest text-brand-moss uppercase animate-pulse">
+                                Loading Secure Sourcing Portal...
+                            </p>
+                        </div>
+                    )}
+
                     <iframe
                         src="https://docs.google.com/forms/d/e/1FAIpQLSf-t5HcvwiH2bJvFFge8KFp4TuQXeqLD0YcyPUe1LQpTo9nXQ/viewform?embedded=true"
                         width="100%"
@@ -51,6 +69,7 @@ const Quote = () => {
                         marginHeight="0"
                         marginWidth="0"
                         className="w-full"
+                        onLoad={() => setIsLoading(false)}
                     >
                         Loading enquiry form...
                     </iframe>

@@ -9,24 +9,24 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
     {
         id: 1,
-        title: "Premium, Sustainability-Certified",
+        title: "EUDR Compliant Forestry",
         subtitle: "Environmental Integrity",
         icon: Leaf,
-        description: "Sourced from FSC and PEFC certified forests, guaranteeing responsible harvesting, support for reforestation, and protection of biodiversity. Position your projects as eco-responsible with top-tier material."
+        description: "Sourced exclusively from PEFC-certified forests, guaranteeing responsible harvesting, support for reforestation, and active protection of biodiversity. Our sustainable tropical timber is fully prepared for global environmental scrutiny."
     },
     {
         id: 2,
-        title: "Comprehensive, Custom Solutions",
+        title: "Verified Timber Traceability",
         subtitle: "Responsible Supply Chain",
         icon: ShieldCheck,
-        description: <>From furniture timber to <Link to="/products" className="text-brand-clay font-medium hover:underline transition-colors">planks</Link>, carefully selected to meet high standards. Tailored processing with low-impact practices ensures consistency and traceability from forest to final delivery.</>
+        description: <>Every log is mapped directly to its origin stump. We operate a comprehensive, state-of-the-art <Link to="/compliance" className="text-brand-clay font-medium hover:underline transition-colors">timber traceability system</Link> from forest harvesting to sawmilling and final export delivery.</>
     },
     {
         id: 3,
-        title: "Long-Term Ecosystem Stewardship",
+        title: "Global B2B Compliance",
         subtitle: "Sustainable Partnership",
         icon: TreePine,
-        description: "Committed to selective harvesting and replanting. Align with a brand that actively contributes to forest conservation, securing quality wood for future generations and enhancing your ESG credentials."
+        description: "Align with a premier brand delivering fully EUDR compliant timber from Malaysia. We handle complex international custom declarations, PEFC chain of custody, and physical grading reports seamlessly."
     }
 ];
 

@@ -10,6 +10,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
         { name: 'Products', path: '/products' },
+        { name: 'Compliance', path: '/compliance' },
         { name: 'Vitrex Timber Industries', path: '/vitrex' },
         { name: 'Agarwood', path: '/agarwood' },
         { name: 'Blog', path: '/blog' },

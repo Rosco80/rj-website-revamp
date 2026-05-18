@@ -64,8 +64,12 @@ export default function SEO({ title, description, canonical, image, schema, sche
             <meta name="description" content={description} />
             {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
-            {/* GEO Targeting: Global Fallback since we don't use localized subdirectories */}
+            {/* GEO Targeting: Target Regions (Europe, NA, Middle East, Asia) */}
             {canonicalUrl && <link rel="alternate" hreflang="en" href={canonicalUrl} />}
+            {canonicalUrl && <link rel="alternate" hreflang="en-GB" href={canonicalUrl} />}
+            {canonicalUrl && <link rel="alternate" hreflang="en-US" href={canonicalUrl} />}
+            {canonicalUrl && <link rel="alternate" hreflang="en-AE" href={canonicalUrl} />}
+            {canonicalUrl && <link rel="alternate" hreflang="en-SG" href={canonicalUrl} />}
             {canonicalUrl && <link rel="alternate" hreflang="x-default" href={canonicalUrl} />}
 
             {/* Open Graph */}

@@ -59,6 +59,36 @@ const Agarwood = () => {
                             "availability": "https://schema.org/InStock",
                             "url": "https://rjwoodtrading.com/quote"
                         }
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "What is Agarwood Oil (Oud)?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Agarwood oil, also known as Oud, is a highly prized essential oil distilled from the resinous heartwood of Aquilaria trees (specifically Aquilaria Malaccensis) when they become infected with a specific mold. It is famous for its complex, warm, woody aroma."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Is your Agarwood Oil sustainably sourced?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes, at R&J Wood Trading, we harvest our Agarwood oil exclusively from sustainably managed private plantations in Malaysia, preserving wild Aquilaria species and supporting biodiversity."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "What makes Malaysian Aquilaria Malaccensis unique?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Aquilaria Malaccensis is the most sought-after Agarwood species. Its distilled oil delivers a distinctively rich, deep, animalic, and woody note with sweet, balsamic undertones that make it superior to other varieties."
+                                }
+                            }
+                        ]
                     }
                 ]}
             />
@@ -135,6 +165,42 @@ const Agarwood = () => {
                     <p className="text-lg text-brand-cream/80 font-sans leading-relaxed mb-12">
                         At <Link to="/" className="text-white font-medium hover:underline transition-colors">R&J Wood Trading</Link>, we source directly from our own carefully managed <span className="text-brand-clay font-medium italic">Malaccensis</span> tree plantations. We honor the traditional extraction processes, preserving the therapeutic integrity and producing true "liquid gold."
                     </p>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="max-w-5xl mx-auto px-6 md:px-12 lg:px-24 mb-40 animate-section opacity-0">
+                <div className="border-t border-white/10 pt-20 mb-16 text-center">
+                    <h2 className="text-3xl md:text-4xl font-display text-white mb-4">Frequently Asked Questions</h2>
+                    <p className="text-brand-cream/60 font-sans max-w-xl mx-auto">
+                        Quick answers about our premium Agarwood harvesting, distillation, and sustainability.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <div className="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                        <h3 className="text-xl font-sans text-white font-medium mb-3">What is Agarwood Oil (Oud)?</h3>
+                        <p className="text-brand-cream/60 leading-relaxed text-sm">
+                            Agarwood oil, also known as Oud, is a highly prized essential oil distilled from the resinous heartwood of Aquilaria trees (specifically Aquilaria Malaccensis) when they become infected with a specific mold. It is famous for its complex, warm, woody aroma.
+                        </p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                        <h3 className="text-xl font-sans text-white font-medium mb-3">Is your Agarwood Oil sustainably sourced?</h3>
+                        <p className="text-brand-cream/60 leading-relaxed text-sm">
+                            Yes, at R&J Wood Trading, we harvest our Agarwood oil exclusively from sustainably managed private plantations in Malaysia, preserving wild Aquilaria species and supporting biodiversity.
+                        </p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                        <h3 className="text-xl font-sans text-white font-medium mb-3">What makes Malaysian Aquilaria Malaccensis unique?</h3>
+                        <p className="text-brand-cream/60 leading-relaxed text-sm">
+                            Aquilaria Malaccensis is the most sought-after Agarwood species. Its distilled oil delivers a distinctively rich, deep, animalic, and woody note with sweet, balsamic undertones that make it superior to other varieties.
+                        </p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                        <h3 className="text-xl font-sans text-white font-medium mb-3">How do I store pure Oud oil?</h3>
+                        <p className="text-brand-cream/60 leading-relaxed text-sm">
+                            Store pure Oud oil in a cool, dark place in a tightly sealed glass vial. Like fine wine, authentic pure Oud oil ages beautifully and matures over time, becoming smoother and deeper.
+                        </p>
+                    </div>
                 </div>
             </section>
 

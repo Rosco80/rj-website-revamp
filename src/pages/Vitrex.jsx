@@ -25,8 +25,8 @@ const Vitrex = () => {
     return (
         <div className="w-full bg-brand-cream pt-32 pb-24">
             <SEO
-                title="Vitrex Timber Industries"
-                description="Vitrex Timber Industries Sdn. Bhd. — R&J's sister company operating sustainable teak and hardwood plantations in Kelantan, Malaysia since 1991."
+                title="Sustainable Teak Plantations & Kelantan Timber Harvesting"
+                description="Vitrex Timber Industries Sdn. Bhd. operates sustainable teak plantations and verified timber harvesting in Kelantan, Malaysia. Leading Malaysian teak supplier since 1991."
                 canonical="/vitrex"
                 schemas={[
                     {
@@ -60,10 +60,10 @@ const Vitrex = () => {
                             Vitrex Timber Industries
                         </h1>
                         <p className="text-lg text-brand-charcoal/80 font-sans leading-relaxed">
-                            Since 1991, Vitrex Timber Industries Sdn. Bhd. has been a trusted name in the timber industry, operating with a deep commitment to sustainability and quality. As a family-owned Bumiputra company, we are proud of our heritage and dedication to responsible forestry practices.
+                            Since 1991, Vitrex Timber Industries Sdn. Bhd. has been an industry leader in high-end forestry management, cultivating <strong>sustainable teak plantations</strong> and heavy hardwoods in Kelantan, Malaysia. As a family-owned Bumiputra company, our heritage of premium craftsmanship runs deep, supplying verified timber for regional and global B2B supply chains.
                         </p>
                         <p className="text-lg text-brand-charcoal/80 font-sans leading-relaxed mt-4">
-                            Our operations are based in Kelantan State, Malaysia, and we work closely with partners in Thailand to manage premium teak plantations.
+                            Through precise <strong>Kelantan timber harvesting</strong> methodologies, we safeguard biodiversity while managing world-class teak plantations in close partnership with regional operators, functioning as a premier <strong>Malaysian teak supplier</strong>.
                         </p>
                     </div>
                     <div className="flex-1 w-full">
