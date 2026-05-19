@@ -177,6 +177,22 @@ const Products = () => {
             "image": `https://rjwoodtrading.com${p.image}`,
             "description": p.description,
             "category": "Timber > " + p.category,
+            "brand": {
+                "@type": "Brand",
+                "name": "R&J Wood Trading"
+            },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "Sourcing Certification",
+                    "value": "PEFC Certified (Chain of Custody)"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "name": "Regulatory Compliance",
+                    "value": "EUDR Compliant (Deforestation-Free)"
+                }
+            ],
             "offers": {
                 "@type": "AggregateOffer",
                 "priceCurrency": "USD",

@@ -105,6 +105,18 @@ const Species = () => {
                             "@type": "Country",
                             "name": "Malaysia"
                         },
+                        "additionalProperty": [
+                            {
+                                "@type": "PropertyValue",
+                                "name": "Sourcing Certification",
+                                "value": "PEFC Certified (Chain of Custody)"
+                            },
+                            {
+                                "@type": "PropertyValue",
+                                "name": "Regulatory Compliance",
+                                "value": "EUDR Compliant (Deforestation-Free)"
+                            }
+                        ],
                         "keywords": keywords.join(', ')
                     }
                 ]}
