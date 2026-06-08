@@ -102,6 +102,101 @@ const Vitrex = () => {
                 </div>
             </section>
 
+            {/* Traceability & Operations Section */}
+            <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32">
+                <div className="text-center mb-16">
+                    <p className="font-mono text-brand-moss tracking-widest uppercase text-sm font-medium mb-4">
+                        From Forest to Floor
+                    </p>
+                    <h2 className="text-4xl md:text-5xl font-display font-medium text-brand-charcoal mb-6">Traceability & Operations</h2>
+                    <p className="max-w-2xl mx-auto text-lg text-brand-charcoal/70 font-sans leading-relaxed">
+                        We pride ourselves on complete transparency. Witness our active, low-impact harvesting operations in Kelantan, demonstrating our commitment to sustainable forestry and premium quality timber.
+                    </p>
+                </div>
+                
+                {/* Active Harvesting Videos */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
+                        <video 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
+                            autoPlay muted loop playsInline
+                        >
+                            <source src="/authority/active-low-impact-harvesting-kelantan.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-90 transition-opacity duration-500"></div>
+                        <div className="absolute bottom-0 left-0 p-8 md:p-10">
+                            <h3 className="text-white text-3xl font-display font-medium mb-3">Low-Impact Extraction</h3>
+                            <p className="text-white/90 text-base font-sans max-w-sm">Precision machinery navigating forest paths to minimize environmental footprint during selective harvesting.</p>
+                        </div>
+                    </div>
+                    <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
+                        <video 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
+                            autoPlay muted loop playsInline
+                        >
+                            <source src="/authority/heavy-timber-extraction-malaysia.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-90 transition-opacity duration-500"></div>
+                        <div className="absolute bottom-0 left-0 p-8 md:p-10">
+                            <h3 className="text-white text-3xl font-display font-medium mb-3">Sustainable Yield</h3>
+                            <p className="text-white/90 text-base font-sans max-w-sm">Careful extraction of selected mature timber in our Kelantan concessions ensures younger trees can thrive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Staging Yard Masonry / Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    <div className="col-span-2 md:col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <video 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
+                            autoPlay muted loop playsInline
+                        >
+                            <source src="/authority/premium-sawn-logs-staging.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full text-xs font-mono font-medium text-brand-charcoal shadow-sm">
+                            Log Staging Yard
+                        </div>
+                    </div>
+                    
+                    <div className="col-span-1 relative aspect-square md:aspect-auto rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/authority/kelantan-forest-timber-harvesting.jpeg" 
+                            alt="Timber Harvesting Kelantan" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    
+                    <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/authority/malaysian-hardwood-staging-yard.jpeg" 
+                            alt="Hardwood Staging Yard" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    
+                    <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/authority/sustainable-forest-access-road.jpeg" 
+                            alt="Sustainable Forest Access Road" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    
+                    <div className="col-span-2 md:col-span-1 relative aspect-[2/1] md:aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/authority/timber-quality-inspection-kelantan.jpeg" 
+                            alt="Timber Quality Inspection" 
+                            className="w-full h-full object-cover object-[center_30%] transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </section>
+
             {/* Why Choose Vitrex */}
             <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32">
                 <div className="text-center mb-16">

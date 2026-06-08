@@ -57,10 +57,16 @@ const timberProducts = [
 
 const furnitureProducts = [
     {
-        title: "Carved Log Statement Piece",
+        title: "Solid Wood Live Edge Tabletop",
         category: "Premium Furniture",
-        image: "/products/furniture_lifestyle_1.png",
-        description: "A breathtaking, hand-carved solid wood bench that brings raw, sculptural beauty into any modern living space."
+        image: "/authority/premium-live-edge-hardwood-tabletop.jpeg",
+        description: "A breathtaking, hand-finished solid wood live edge table showcasing the natural grain and immense scale of our premium hardwoods."
+    },
+    {
+        title: "Live Edge Workshop Commission",
+        category: "Bespoke Furniture",
+        image: "/authority/live-edge-solid-wood-table-workshop.jpeg",
+        description: "Custom live edge pieces crafted to exact specifications, highlighting the raw, sculptural beauty of sustainable timber."
     },
     {
         title: "Traditional Canopy Bed",
@@ -421,7 +427,7 @@ const Products = () => {
                                         src={prod.image}
                                         alt={`${prod.title} — solid wood custom furniture`}
                                         title={`${prod.title} artisan wood piece`}
-                                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                         loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-500"></div>
