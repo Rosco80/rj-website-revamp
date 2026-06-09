@@ -39,6 +39,7 @@ const Footer = () => {
                         <Link to="/export/middle-east" className="text-brand-clay hover:opacity-80 transition-opacity">ME Exports</Link>
                         <Link to="/agarwood" className="hover:text-brand-clay transition-colors">Agarwood Oil</Link>
                         <Link to="/blog" className="hover:text-brand-clay transition-colors">Insights</Link>
+                        <Link to="/resources" className="hover:text-brand-clay transition-colors">Resources</Link>
                         <Link to="/quote" className="hover:text-brand-clay transition-colors">Get a Quote</Link>
                         <Link to="/privacy" className="hover:text-brand-clay transition-colors">Privacy</Link>
                     </nav>

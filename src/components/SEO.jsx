@@ -54,7 +54,8 @@ export default function SEO({ title, description, canonical, image, schema, sche
             { "@type": "SiteNavigationElement", "position": 3, "name": "Products", "url": "https://rjwoodtrading.com/products" },
             { "@type": "SiteNavigationElement", "position": 4, "name": "Vitrex Timber Industries", "url": "https://rjwoodtrading.com/vitrex" },
             { "@type": "SiteNavigationElement", "position": 5, "name": "Agarwood", "url": "https://rjwoodtrading.com/agarwood" },
-            { "@type": "SiteNavigationElement", "position": 6, "name": "Blog", "url": "https://rjwoodtrading.com/blog" }
+            { "@type": "SiteNavigationElement", "position": 6, "name": "Blog", "url": "https://rjwoodtrading.com/blog" },
+            { "@type": "SiteNavigationElement", "position": 7, "name": "Resources", "url": "https://rjwoodtrading.com/resources" }
         ]
     });
 

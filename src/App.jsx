@@ -18,6 +18,7 @@ const StudioPage = lazy(() => import('./pages/StudioPage'));
 const Quote = lazy(() => import('./pages/Quote'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Compliance = lazy(() => import('./pages/Compliance'));
+const Resources = lazy(() => import('./pages/Resources'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -52,6 +53,7 @@ function AppContent() {
             <Route path="/quote" element={<Quote />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/compliance" element={<Compliance />} />
+            <Route path="/resources" element={<Resources />} />
             <Route path="/studio/*" element={<StudioPage />} />
           </Routes>
         </Suspense>

@@ -14,6 +14,7 @@ const Navbar = () => {
         { name: 'Vitrex Timber Industries', path: '/vitrex' },
         { name: 'Agarwood', path: '/agarwood' },
         { name: 'Blog', path: '/blog' },
+        { name: 'Resources', path: '/resources' },
     ];
 
     const isDarkPage = location.pathname === '/agarwood';
