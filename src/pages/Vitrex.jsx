@@ -119,7 +119,7 @@ const Vitrex = () => {
                     <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
                         <video 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
-                            autoPlay muted loop playsInline
+                            autoPlay muted defaultMuted loop playsInline
                         >
                             <source src="/authority/active-low-impact-harvesting-kelantan.mp4" type="video/mp4" />
                         </video>
@@ -132,7 +132,7 @@ const Vitrex = () => {
                     <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
                         <video 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
-                            autoPlay muted loop playsInline
+                            autoPlay muted defaultMuted loop playsInline
                         >
                             <source src="/authority/heavy-timber-extraction-malaysia.mp4" type="video/mp4" />
                         </video>
@@ -149,7 +149,7 @@ const Vitrex = () => {
                     <div className="col-span-2 md:col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <video 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
-                            autoPlay muted loop playsInline
+                            autoPlay muted defaultMuted loop playsInline
                         >
                             <source src="/authority/premium-sawn-logs-staging.mp4" type="video/mp4" />
                         </video>
