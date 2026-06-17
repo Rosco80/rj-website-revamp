@@ -15,11 +15,22 @@
     "source": "dist",
     "destination": "dist",
     "puppeteerExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "inlineCss": false,
     "skipThirdPartyRequests": true,
     "crawl": false,
-    "include": ["/", "/about", "/products", "/vitrex", "/agarwood", "/blog", "/quote"]
+    "include": [
+      "/",
+      "/about",
+      "/products",
+      "/vitrex",
+      "/agarwood",
+      "/blog",
+      "/quote"
+    ]
   },
   "dependencies": {
     "@portabletext/react": "^6.0.2",
@@ -37,7 +48,8 @@
     "react-dom": "^19.2.0",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.13.0",
-    "sanity": "^5.11.0"
+    "sanity": "^5.11.0",
+    "sharp": "^0.35.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

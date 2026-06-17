@@ -12,7 +12,7 @@ const regionData = {
         seoDescription: 'Direct export of PEFC certified Malaysian hardwood. Meeting Europe\'s strictly regulated carbon and forestry standards with Merbau and Teak.',
         keywords: ['PEFC Certified Export', 'European Timber Supplier', 'EUDR Compliant Timber', 'Sustainable Malaysian Hardwood', 'FSC Pursuit Export'],
         heroTagline: 'Compliance, Traceability, and Environmental Excellence.',
-        heroImage: '/hero-vitrex.jpg', 
+        heroImage: '/hero-vitrex.webp', 
         description: 'For the highly regulated European market, transparency is non-negotiable. R&J Wood Trading bypasses brokers to provide direct, verifiable shipments of premium Merbau and Teak that align perfectly with stringent EU forestry directives and carbon compliance metrics.',
         marketFocus: 'High-end architectural finishing, luxury marine decking, and EUDR-compliant structural integration.',
         sellingPoints: [
@@ -26,7 +26,7 @@ const regionData = {
         seoDescription: 'Bulk timber exporter for Middle Eastern infrastructure. Reliable supply of Keruing, Balau, and Teak for massive-scale developments.',
         keywords: ['Middle East Timber Export', 'UAE Hardwood Supplier', 'Saudi Infrastructure Wood', 'Bulk Keruing Export', 'Durable Coastal Timber'],
         heroTagline: 'Bulk Reliability for Massive Scale Development.',
-        heroImage: '/hero-home.jpg', 
+        heroImage: '/hero-home.webp', 
         description: 'The Middle East demands structural resilience and bulk reliability. We supply high-density Keruing and Balau optimized for immense heat and structural load, alongside luxury Teak for the booming high-end real estate sectors in the UAE and Saudi Arabia.',
         marketFocus: 'Large-scale infrastructure, coastal development resilience, and ultra-luxury project finishing.',
         sellingPoints: [

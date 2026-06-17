@@ -13,14 +13,14 @@ const timelineSteps = [
         title: "Sustainable Harvesting",
         description: "Our timber begins its journey in sustainably managed Malaysian forests and our Kelantan plantations (Vitrex Timber Industries). We strictly adhere to selective harvesting practices to regenerate forest ecosystems.",
         keyword: "PEFC certified hardwood supplier",
-        image: "/REPLANTING/IMG-20260617-WA0033.jpg"
+        image: "/REPLANTING/IMG-20260617-WA0033.webp"
     },
     {
         icon: <Map size={32} className="text-brand-moss" />,
         title: "Geolocated Traceability",
         description: "Every log is tagged and recorded at the stump. We map exact GPS coordinates to ensure absolute proof of origin, satisfying the strictest global import regulations.",
         keyword: "Timber traceability system",
-        image: "/REPLANTING/IMG-20260617-WA0040.jpg"
+        image: "/REPLANTING/IMG-20260617-WA0040.webp"
     },
     {
         icon: <ShieldCheck size={32} className="text-brand-moss" />,

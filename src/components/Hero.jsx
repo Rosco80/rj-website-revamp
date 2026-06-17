@@ -73,7 +73,7 @@ const Hero = () => {
                     <div ref={imageContainerRef} className="relative h-[400px] lg:h-[600px] w-full overflow-hidden rounded-[2rem] lg:rounded-bl-[6rem] lg:rounded-tr-[6rem] shadow-2xl">
                         <img
                             ref={imageRef}
-                            src="/hero-home.jpg"
+                            src="/hero-home.webp"
                             alt="Raw Malaysian timber logs and planks"
                             title="Sustainably sourced Malaysian hardwood — R&J Wood Trading"
                             className="w-full h-full object-cover"

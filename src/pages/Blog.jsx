@@ -76,7 +76,7 @@ const Blog = () => {
                             "name": "R&J Wood Trading",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://rjwoodtrading.com/logo.jpg"
+                                "url": "https://rjwoodtrading.com/logo.webp"
                             }
                         }
                     }

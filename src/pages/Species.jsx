@@ -12,7 +12,7 @@ const speciesData = {
         seoDescription: 'Direct from traceable Malaysian reserves. Export-grade Balau timber, ideal for heavy structural applications, coastal climates, and high-durability decking.',
         keywords: ['PEFC Certified Balau', 'Wholesale Balau Decking', 'Coastal Climate Timber', 'Malaysian Hardwood Export', 'Forest to Delivery Traceability'],
         heroTagline: 'Engineered by Nature for Extreme Durability.',
-        heroImage: '/hero-home.jpg', // Using existing assets as placeholders
+        heroImage: '/hero-home.webp', // Using existing assets as placeholders
         description: 'Balau is an extremely dense, high-durability heavy hardwood. Its natural resistance to fungal decay and insect attacks makes it the undisputed choice for structural grading, extreme coastal climates, and high-traffic decking.',
         techSpecs: [
             { label: 'Classification', value: 'Heavy Hardwood' },
@@ -31,7 +31,7 @@ const speciesData = {
         seoDescription: 'Procure premium Merbau flooring and luxury joinery timber. Sustainably sourced from Vitrex managed reserves with exact MGR parameters.',
         keywords: ['Merbau Flooring Export', 'Luxury Timber Supply', 'Malaysian Merbau', 'Sustainable Hardwood', 'High-end Architectural Finish'],
         heroTagline: 'The Standard for Luxury Architectural Finish.',
-        heroImage: '/products/flooring.png', 
+        heroImage: '/products/flooring.webp', 
         description: 'Merbau stands as the pinnacle for luxury interiors. With a rich reddish-brown hue and excellent dimensional stability, it is highly sought after by premium B2B architects for custom flooring, high-end joinery, and exquisite furniture.',
         techSpecs: [
             { label: 'Classification', value: 'Heavy Hardwood (Premium)' },
@@ -50,7 +50,7 @@ const speciesData = {
         seoDescription: 'Direct suppliers of premium Teak. Secure, sustainable, and highly regulated harvest quotas ensuring unparalleled quality and ethical export.',
         keywords: ['Sustainable Teak Supply', 'Teak Export Traceability', 'Marine Grade Teak', 'Ethical Timber Trade'],
         heroTagline: 'Unparalleled Prestige and Marine Durability.',
-        heroImage: '/hero-vitrex.jpg', 
+        heroImage: '/hero-vitrex.webp', 
         description: 'The global gold standard for marine and exterior luxury. Our Teak is harvested under strict plantation quotas from Kelantan and Thailand, locking in its unmatched natural oil content and environmental resilience.',
         techSpecs: [
             { label: 'Classification', value: 'Premium Hardwood' },

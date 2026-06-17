@@ -11,46 +11,46 @@ const timberProducts = [
     {
         title: "Heavy Hardwood",
         category: "Structural Timber",
-        image: "/products/Heavy_hard_wood.png",
+        image: "/products/Heavy_hard_wood.webp",
         description: "Extremely durable, high-density timber designed for heavy structural use and critical load-bearing applications.",
         keywords: "Wholesale Balau timber, Merbau wood export"
     },
     {
         title: "Medium Hardwood",
         category: "Versatile Timber",
-        image: "/products/medium_hardwood_lumber.png",
+        image: "/products/medium_hardwood_lumber.webp",
         description: "Balanced strength and workability, ideal for general construction, heavy duty furniture, and decking.",
         keywords: "Sustainably sourced Keruing, Malaysian timber supplier"
     },
     {
         title: "Light Hardwood",
         category: "Interior & Joinery",
-        image: "/products/Light_hardwood_P1.png",
+        image: "/products/Light_hardwood_P1.webp",
         description: "Premium light hardwoods perfect for fine interior joinery, light structural work, and elegant paneling.",
         keywords: "Red Meranti supplier, light tropical hardwood"
     },
     {
         title: "Light Hardwood (Alternative Profile)",
         category: "Interior & Joinery",
-        image: "/products/light_hardwood_P2.png",
+        image: "/products/light_hardwood_P2.webp",
         description: "Alternative profiles of our signature light hardwoods, tailored for specialized architectural finishes."
     },
     {
         title: "Mixed Hardwood",
         category: "General Construction",
-        image: "/products/mixed_Hardwood.png",
+        image: "/products/mixed_Hardwood.webp",
         description: "A robust combination of selected hardwood species offering excellent utility and structural value."
     },
     {
         title: "Plywood",
         category: "Engineered Wood",
-        image: "/products/plywoodpng.png",
+        image: "/products/plywoodpng.webp",
         description: "High-grade, sustainably bonded plywood providing exceptional stability for both structural and decorative purposes."
     },
     {
         title: "Hardwood Flooring",
         category: "Interiors",
-        image: "/products/flooring.png",
+        image: "/products/flooring.webp",
         description: "Elegant and resilient flooring solutions combining structural integrity with rich, warm organic textures."
     }
 ];
@@ -59,25 +59,25 @@ const furnitureProducts = [
     {
         title: "Solid Wood Live Edge Tabletop",
         category: "Premium Furniture",
-        image: "/authority/premium-live-edge-hardwood-tabletop.jpeg",
+        image: "/authority/premium-live-edge-hardwood-tabletop.webp",
         description: "A breathtaking, hand-finished solid wood live edge table showcasing the natural grain and immense scale of our premium hardwoods."
     },
     {
         title: "Live Edge Workshop Commission",
         category: "Bespoke Furniture",
-        image: "/authority/live-edge-solid-wood-table-workshop.jpeg",
+        image: "/authority/live-edge-solid-wood-table-workshop.webp",
         description: "Custom live edge pieces crafted to exact specifications, highlighting the raw, sculptural beauty of sustainable timber."
     },
     {
         title: "Traditional Canopy Bed",
         category: "Bespoke Furniture",
-        image: "/products/furniture_lifestyle_2.png",
+        image: "/products/furniture_lifestyle_2.webp",
         description: "A masterfully crafted wooden bed frame featuring intricate traditional detailing and robust timber construction."
     },
     {
         title: "Executive Wooden Desk",
         category: "Office Furniture",
-        image: "/products/furniture_lifestyle_3.png",
+        image: "/products/furniture_lifestyle_3.webp",
         description: "A substantial, finely polished solid wood desk that commands attention, perfect for a sophisticated home office."
     }
 ];
@@ -86,21 +86,21 @@ const flooringProducts = [
     {
         title: "Balau Parquet Flooring",
         category: "Interior Flooring",
-        image: "/products/flooring_lifestyle_1.png",
+        image: "/products/flooring_lifestyle_1.webp",
         description: "Warm, inviting, and incredibly durable. Our Balau flooring brings nature's resilience indoors.",
         keywords: "Balau timber flooring, sustainable parquet"
     },
     {
         title: "Merbau Wide Plank Flooring",
         category: "Interior Flooring",
-        image: "/products/flooring_lifestyle_2.png",
+        image: "/products/flooring_lifestyle_2.webp",
         description: "Rich, dark tones with stunning grain patterns that elevate any contemporary or classic room.",
         keywords: "Merbau flooring planks, dark tropical hardwood"
     },
     {
         title: "Teak Herringbone Pattern",
         category: "Premium Flooring",
-        image: "/products/flooring_lifestyle_3.png",
+        image: "/products/flooring_lifestyle_3.webp",
         description: "Timeless elegance meets modern installation. Sustainably sourced Teak in a classic herringbone layout.",
         keywords: "Bespoke Teak flooring, high-end wood flooring"
     }

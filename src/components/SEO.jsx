@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 
 const SITE_URL = 'https://rjwoodtrading.com'
 const SITE_NAME = 'R&J Wood Trading'
-const DEFAULT_IMAGE = '/hero-home.jpg'
+const DEFAULT_IMAGE = '/hero-home.webp'
 
 // Accepts either a single `schema` object or a `schemas` array.
 // Multiple schemas = multiple <script type="application/ld+json"> blocks per page.

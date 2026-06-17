@@ -43,14 +43,14 @@ const About = () => {
             role: "Sales & Customer Relations",
             email: "rjwoodtradings@gmail.com",
             phone: "+6011-1431 0063",
-            image: "/andrea.png"
+            image: "/andrea.webp"
         },
         {
             name: "Firmin Rieu",
             role: "Director",
             email: "rjwoodtradings@gmail.com",
             phone: "+60 11-6972 2994",
-            image: "/firmin.png"
+            image: "/firmin.webp"
         }
     ];
 

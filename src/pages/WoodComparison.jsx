@@ -160,7 +160,7 @@ const WoodComparison = () => {
                     </div>
                     <div className="lg:w-1/2 relative">
                         <div className="absolute inset-0 bg-brand-clay/10 translate-x-4 translate-y-4 rounded-[2rem] -z-10"></div>
-                        <img src="/Wood/IMG-20230510-WA0006.jpg" alt="Premium hardwood grain" className="w-full h-[400px] object-cover rounded-[2rem] shadow-xl border border-brand-charcoal/5" loading="lazy" />
+                        <img src="/Wood/IMG-20230510-WA0006.webp" alt="Premium hardwood grain" className="w-full h-[400px] object-cover rounded-[2rem] shadow-xl border border-brand-charcoal/5" loading="lazy" />
                     </div>
                 </div>
             </section>

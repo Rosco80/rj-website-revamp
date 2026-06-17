@@ -43,7 +43,7 @@ const Agarwood = () => {
                 title="Pure Agarwood Oil"
                 description="Premium agarwood essential oil from private Malaccensis tree plantations in Malaysia. Nature's liquid gold — pure, potent, and sustainably produced."
                 canonical="/agarwood"
-                image="/agarwood-oil.jpg"
+                image="/agarwood-oil.webp"
                 schemas={[
                     {
                         "@context": "https://schema.org",
@@ -53,7 +53,7 @@ const Agarwood = () => {
                         "brand": { "@type": "Brand", "name": "R&J Wood Trading" },
                         "material": "Aquilaria Malaccensis",
                         "countryOfOrigin": { "@type": "Country", "name": "Malaysia" },
-                        "image": "https://rjwoodtrading.com/agarwood-oil.jpg",
+                        "image": "https://rjwoodtrading.com/agarwood-oil.webp",
                         "offers": {
                             "@type": "Offer",
                             "availability": "https://schema.org/InStock",
@@ -111,7 +111,7 @@ const Agarwood = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden">
                         <img
-                            src="/agarwood-oil.jpg"
+                            src="/agarwood-oil.webp"
                             alt="Pure Malaysian Agarwood essential oil from Aquilaria Malaccensis plantations"
                             title="R&J Wood Trading — Premium Agarwood Oil"
                             className="w-full h-full object-cover"
@@ -185,7 +185,7 @@ const Agarwood = () => {
                             <span className="font-mono text-xs">01</span>
                         </div>
                         <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl group-hover:border-brand-clay/50 transition-colors">
-                            <img src="/agarwood_trees.jpg" alt="Sustainable Aquilaria Malaccensis plantation" className="rounded-xl w-full h-48 md:h-64 object-cover mb-4" loading="lazy" />
+                            <img src="/agarwood_trees.webp" alt="Sustainable Aquilaria Malaccensis plantation" className="rounded-xl w-full h-48 md:h-64 object-cover mb-4" loading="lazy" />
                             <h3 className="text-2xl font-display text-white mb-2">Cultivation & Inoculation</h3>
                             <p className="text-brand-cream/60 font-sans text-sm leading-relaxed">
                                 Our Aquilaria trees are carefully nurtured in Southeast Asia. We use sustainable methods to induce the natural defense mechanism that creates the prized resin. Only infected trees produce this "liquid gold," making the process a rare art.
@@ -199,7 +199,7 @@ const Agarwood = () => {
                             <span className="font-mono text-xs">02</span>
                         </div>
                         <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl group-hover:border-brand-clay/50 transition-colors">
-                            <img src="/sap_harvested.jpg" alt="Harvesting the dark, resinous agarwood heartwood" className="rounded-xl w-full h-48 md:h-64 object-cover mb-4" loading="lazy" />
+                            <img src="/sap_harvested.webp" alt="Harvesting the dark, resinous agarwood heartwood" className="rounded-xl w-full h-48 md:h-64 object-cover mb-4" loading="lazy" />
                             <h3 className="text-2xl font-display text-white mb-2">Harvesting the Resin</h3>
                             <p className="text-brand-cream/60 font-sans text-sm leading-relaxed">
                                 After years of careful monitoring, the dark, fragrant resin-impregnated heartwood is expertly harvested. The rich, woody, and sweet scent is already apparent in the raw wood before distillation even begins.
@@ -214,8 +214,8 @@ const Agarwood = () => {
                         </div>
                         <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl group-hover:border-brand-moss/50 transition-colors">
                             <div className="grid grid-cols-2 gap-2 mb-4">
-                                <img src="/Agar Oil/IMG-20241010-WA0003.jpg" alt="Distillation process" className="rounded-xl w-full h-24 md:h-32 object-cover" loading="lazy" />
-                                <img src="/Agar Oil/IMG-20241010-WA0005.jpg" alt="Pure Oud Oil droplets" className="rounded-xl w-full h-24 md:h-32 object-cover" loading="lazy" />
+                                <img src="/Agar Oil/IMG-20241010-WA0003.webp" alt="Distillation process" className="rounded-xl w-full h-24 md:h-32 object-cover" loading="lazy" />
+                                <img src="/Agar Oil/IMG-20241010-WA0005.webp" alt="Pure Oud Oil droplets" className="rounded-xl w-full h-24 md:h-32 object-cover" loading="lazy" />
                             </div>
                             <h3 className="text-2xl font-display text-white mb-2">Artisanal Distillation</h3>
                             <p className="text-brand-cream/60 font-sans text-sm leading-relaxed">
@@ -281,8 +281,8 @@ const Agarwood = () => {
                             </div>
                         </div>
                         <div className="w-full md:w-1/3 grid grid-cols-2 gap-4">
-                            <img src="/Agar Oil/IMG-20250210-WA0013.jpg" alt="Agarwood purity testing" className="rounded-xl w-full h-full object-cover shadow-lg border border-white/10" loading="lazy" />
-                            <img src="/Agar Oil/IMG-20250224-WA0003.jpg" alt="Laboratory analysis vials" className="rounded-xl w-full h-full object-cover shadow-lg border border-white/10 translate-y-6" loading="lazy" />
+                            <img src="/Agar Oil/IMG-20250210-WA0013.webp" alt="Agarwood purity testing" className="rounded-xl w-full h-full object-cover shadow-lg border border-white/10" loading="lazy" />
+                            <img src="/Agar Oil/IMG-20250224-WA0003.webp" alt="Laboratory analysis vials" className="rounded-xl w-full h-full object-cover shadow-lg border border-white/10 translate-y-6" loading="lazy" />
                         </div>
                     </div>
                 </div>

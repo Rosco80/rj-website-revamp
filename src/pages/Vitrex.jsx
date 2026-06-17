@@ -69,7 +69,7 @@ const Vitrex = () => {
                     <div className="flex-1 w-full">
                         <div className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[2/3] max-h-[80vh] w-full overflow-hidden rounded-[2rem] lg:rounded-bl-[6rem] lg:rounded-tr-[6rem] shadow-2xl">
                             <img
-                                src="/hero-vitrex.jpg"
+                                src="/hero-vitrex.webp"
                                 alt="Sustainable forestry and teak plantations in Malaysia"
                                 title="Vitrex Timber Industries — Kelantan, Malaysia"
                                 className="w-full h-full object-cover origin-center"
@@ -135,7 +135,7 @@ const Vitrex = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16">
                     <div className="col-span-2 md:col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/REPLANTING/IMG-20260617-WA0019.jpg" 
+                            src="/REPLANTING/IMG-20260617-WA0019.webp" 
                             alt="Replanting efforts Kelantan" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -146,7 +146,7 @@ const Vitrex = () => {
                     </div>
                     <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/REPLANTING/IMG-20260617-WA0020.jpg" 
+                            src="/REPLANTING/IMG-20260617-WA0020.webp" 
                             alt="Young saplings" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -154,7 +154,7 @@ const Vitrex = () => {
                     </div>
                     <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/REPLANTING/IMG-20260617-WA0027.jpg" 
+                            src="/REPLANTING/IMG-20260617-WA0027.webp" 
                             alt="Sustainable soil preparation" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -162,7 +162,7 @@ const Vitrex = () => {
                     </div>
                     <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/REPLANTING/IMG-20260617-WA0028.jpg" 
+                            src="/REPLANTING/IMG-20260617-WA0028.webp" 
                             alt="Reforestation management" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -170,7 +170,7 @@ const Vitrex = () => {
                     </div>
                     <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/REPLANTING/IMG-20260617-WA0029.jpg" 
+                            src="/REPLANTING/IMG-20260617-WA0029.webp" 
                             alt="Local workers planting" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -178,7 +178,7 @@ const Vitrex = () => {
                     </div>
                     <div className="col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/REPLANTING/IMG-20260617-WA0032.jpg" 
+                            src="/REPLANTING/IMG-20260617-WA0032.webp" 
                             alt="Kelantan plantation landscape" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -246,7 +246,7 @@ const Vitrex = () => {
                     
                     <div className="col-span-1 relative aspect-square md:aspect-auto rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/authority/kelantan-forest-timber-harvesting.jpeg" 
+                            src="/authority/kelantan-forest-timber-harvesting.webp" 
                             alt="Timber Harvesting Kelantan" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -255,7 +255,7 @@ const Vitrex = () => {
                     
                     <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/authority/malaysian-hardwood-staging-yard.jpeg" 
+                            src="/authority/malaysian-hardwood-staging-yard.webp" 
                             alt="Hardwood Staging Yard" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -264,7 +264,7 @@ const Vitrex = () => {
                     
                     <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/authority/sustainable-forest-access-road.jpeg" 
+                            src="/authority/sustainable-forest-access-road.webp" 
                             alt="Sustainable Forest Access Road" 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
@@ -273,7 +273,7 @@ const Vitrex = () => {
                     
                     <div className="col-span-2 md:col-span-1 relative aspect-[2/1] md:aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <img 
-                            src="/authority/timber-quality-inspection-kelantan.jpeg" 
+                            src="/authority/timber-quality-inspection-kelantan.webp" 
                             alt="Timber Quality Inspection" 
                             className="w-full h-full object-cover object-[center_30%] transform transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
