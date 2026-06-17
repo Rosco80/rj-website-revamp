@@ -20,6 +20,34 @@ const Vitrex = () => {
             { opacity: 0, y: 30 },
             { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
         );
+
+        // Force all videos to play (iOS/Mobile Safari workaround)
+        // Mobile browsers often block multiple autoplay videos unless manually triggered
+        const forceVideoPlay = () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.muted = true;
+                video.defaultMuted = true;
+                video.playsInline = true;
+                video.setAttribute('playsinline', '');
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Video autoplay blocked by browser:", error);
+                    });
+                }
+            });
+        };
+
+        // Try immediately
+        forceVideoPlay();
+        
+        // And also when user interacts with the page as a fallback
+        document.addEventListener('touchstart', forceVideoPlay, { once: true });
+        
+        return () => {
+            document.removeEventListener('touchstart', forceVideoPlay);
+        };
     }, []);
 
     return (
