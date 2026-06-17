@@ -128,16 +128,16 @@ function Home() {
 
                     {/* Certification badges */}
                     <div className="mt-12 pt-10 border-t border-brand-cream/10 flex flex-wrap items-center justify-center gap-6">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-moss/40 text-brand-moss font-mono text-xs tracking-widest uppercase">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-clay/40 text-brand-clay font-mono text-xs tracking-widest uppercase">
                             FSC Certification — In Progress
                         </span>
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-moss/40 text-brand-moss font-mono text-xs tracking-widest uppercase">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-clay/40 text-brand-clay font-mono text-xs tracking-widest uppercase">
                             PEFC Standards
                         </span>
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-clay/40 text-brand-clay font-mono text-xs tracking-widest uppercase">
                             Sustainably Sourced
                         </span>
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-cream/20 text-brand-cream/60 font-mono text-xs tracking-widest uppercase">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-clay/40 text-brand-clay font-mono text-xs tracking-widest uppercase">
                             Vertically Integrated Supply Chain
                         </span>
                     </div>

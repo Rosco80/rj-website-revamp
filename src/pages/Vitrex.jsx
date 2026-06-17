@@ -102,6 +102,91 @@ const Vitrex = () => {
                 </div>
             </section>
 
+            {/* Replanting Efforts Video Gallery */}
+            <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32">
+                <div className="text-center mb-16">
+                    <p className="font-mono text-brand-moss tracking-widest uppercase text-sm font-medium mb-4">
+                        Active Reforestation
+                    </p>
+                    <h2 className="text-4xl md:text-5xl font-display font-medium text-brand-charcoal mb-6">Replanting in Action</h2>
+                    <p className="max-w-2xl mx-auto text-lg text-brand-charcoal/70 font-sans leading-relaxed">
+                        We don't just harvest; we restore. Watch our team on the ground executing our rigorous replanting program to ensure the Kelantan forests thrive for generations.
+                    </p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[1, 2, 3].map((num) => (
+                        <div key={num} className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
+                            <video 
+                                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
+                                autoPlay={true} muted={true} loop={true} playsInline={true}
+                            >
+                                <source src={`/authority/replanting-session-${num}.mp4`} type="video/mp4" />
+                            </video>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100"></div>
+                            <div className="absolute bottom-0 left-0 p-6">
+                                <h3 className="text-white text-xl font-display font-medium">Replanting Session 0{num}</h3>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Replanting Photo Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16">
+                    <div className="col-span-2 md:col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/REPLANTING/IMG-20260617-WA0019.jpg" 
+                            alt="Replanting efforts Kelantan" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full text-xs font-mono font-medium text-brand-moss shadow-sm">
+                            Planting Phase
+                        </div>
+                    </div>
+                    <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/REPLANTING/IMG-20260617-WA0020.jpg" 
+                            alt="Young saplings" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/REPLANTING/IMG-20260617-WA0027.jpg" 
+                            alt="Sustainable soil preparation" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/REPLANTING/IMG-20260617-WA0028.jpg" 
+                            alt="Reforestation management" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div className="col-span-1 relative aspect-square rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/REPLANTING/IMG-20260617-WA0029.jpg" 
+                            alt="Local workers planting" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div className="col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
+                        <img 
+                            src="/REPLANTING/IMG-20260617-WA0032.jpg" 
+                            alt="Kelantan plantation landscape" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </section>
+
             {/* Traceability & Operations Section */}
             <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-32">
                 <div className="text-center mb-16">
@@ -119,7 +204,7 @@ const Vitrex = () => {
                     <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
                         <video 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
-                            autoPlay muted defaultMuted loop playsInline
+                            autoPlay={true} muted={true} loop={true} playsInline={true}
                         >
                             <source src="/authority/active-low-impact-harvesting-kelantan.mp4" type="video/mp4" />
                         </video>
@@ -132,7 +217,7 @@ const Vitrex = () => {
                     <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group bg-brand-charcoal">
                         <video 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
-                            autoPlay muted defaultMuted loop playsInline
+                            autoPlay={true} muted={true} loop={true} playsInline={true}
                         >
                             <source src="/authority/heavy-timber-extraction-malaysia.mp4" type="video/mp4" />
                         </video>
@@ -149,7 +234,7 @@ const Vitrex = () => {
                     <div className="col-span-2 md:col-span-2 relative aspect-video rounded-[1.5rem] overflow-hidden shadow-lg group bg-brand-charcoal">
                         <video 
                             className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
-                            autoPlay muted defaultMuted loop playsInline
+                            autoPlay={true} muted={true} loop={true} playsInline={true}
                         >
                             <source src="/authority/premium-sawn-logs-staging.mp4" type="video/mp4" />
                         </video>

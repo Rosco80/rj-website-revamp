@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Droplet, Sparkles, Wind, ArrowRight } from 'lucide-react';
+import { Droplet, Sparkles, Wind, ArrowRight, ShieldCheck, FileText, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -156,7 +156,7 @@ const Agarwood = () => {
             </section>
 
             {/* The Source Section */}
-            <section className="bg-brand-moss/20 border-y border-brand-moss/30 py-32 px-6 md:px-12 lg:px-24 mb-32 animate-section opacity-0">
+            <section className="bg-brand-moss/20 border-y border-brand-moss/30 py-32 px-6 md:px-12 lg:px-24 mb-20 animate-section opacity-0">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-8">The Ancient Art of Processing</h2>
                     <p className="text-lg text-brand-cream/80 font-sans leading-relaxed mb-6">
@@ -165,6 +165,126 @@ const Agarwood = () => {
                     <p className="text-lg text-brand-cream/80 font-sans leading-relaxed mb-12">
                         At <Link to="/" className="text-white font-medium hover:underline transition-colors">R&J Wood Trading</Link>, we source directly from our own carefully managed <span className="text-brand-clay font-medium italic">Malaccensis</span> tree plantations. We honor the traditional extraction processes, preserving the therapeutic integrity and producing true "liquid gold."
                     </p>
+                </div>
+            </section>
+
+            {/* The Journey Timeline Section */}
+            <section className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24 mb-32">
+                <div className="text-center mb-16 animate-section opacity-0">
+                    <h2 className="text-4xl md:text-5xl font-display text-white mb-4">The Journey of our Agar Oil</h2>
+                    <p className="text-brand-cream/60 font-sans max-w-2xl mx-auto">
+                        From our sustainably managed plantations to the final distillation, witness the meticulous process behind the creation of our pure liquid gold.
+                    </p>
+                </div>
+
+                <div className="space-y-24 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
+                    
+                    {/* Timeline Item 1 */}
+                    <article className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group animate-section opacity-0">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#1A1A1A] bg-brand-clay text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <span className="font-mono text-xs">01</span>
+                        </div>
+                        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl group-hover:border-brand-clay/50 transition-colors">
+                            <img src="/agarwood_trees.jpg" alt="Sustainable Aquilaria Malaccensis plantation" className="rounded-xl w-full h-48 md:h-64 object-cover mb-4" loading="lazy" />
+                            <h3 className="text-2xl font-display text-white mb-2">Cultivation & Inoculation</h3>
+                            <p className="text-brand-cream/60 font-sans text-sm leading-relaxed">
+                                Our Aquilaria trees are carefully nurtured in Southeast Asia. We use sustainable methods to induce the natural defense mechanism that creates the prized resin. Only infected trees produce this "liquid gold," making the process a rare art.
+                            </p>
+                        </div>
+                    </article>
+
+                    {/* Timeline Item 2 */}
+                    <article className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group animate-section opacity-0">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#1A1A1A] bg-brand-clay text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <span className="font-mono text-xs">02</span>
+                        </div>
+                        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl group-hover:border-brand-clay/50 transition-colors">
+                            <img src="/sap_harvested.jpg" alt="Harvesting the dark, resinous agarwood heartwood" className="rounded-xl w-full h-48 md:h-64 object-cover mb-4" loading="lazy" />
+                            <h3 className="text-2xl font-display text-white mb-2">Harvesting the Resin</h3>
+                            <p className="text-brand-cream/60 font-sans text-sm leading-relaxed">
+                                After years of careful monitoring, the dark, fragrant resin-impregnated heartwood is expertly harvested. The rich, woody, and sweet scent is already apparent in the raw wood before distillation even begins.
+                            </p>
+                        </div>
+                    </article>
+
+                    {/* Timeline Item 3 */}
+                    <article className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group animate-section opacity-0">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#1A1A1A] bg-brand-moss text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <span className="font-mono text-xs">03</span>
+                        </div>
+                        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl group-hover:border-brand-moss/50 transition-colors">
+                            <div className="grid grid-cols-2 gap-2 mb-4">
+                                <img src="/Agar Oil/IMG-20241010-WA0003.jpg" alt="Distillation process" className="rounded-xl w-full h-24 md:h-32 object-cover" loading="lazy" />
+                                <img src="/Agar Oil/IMG-20241010-WA0005.jpg" alt="Pure Oud Oil droplets" className="rounded-xl w-full h-24 md:h-32 object-cover" loading="lazy" />
+                            </div>
+                            <h3 className="text-2xl font-display text-white mb-2">Artisanal Distillation</h3>
+                            <p className="text-brand-cream/60 font-sans text-sm leading-relaxed">
+                                The wood is processed and slowly distilled to extract the concentrated essential oil. We focus on producing "Super/Pure Oud" grade—the highest quality offering an extremely rich, complex, and long-lasting aroma.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            {/* Authenticity & Lab Results Section */}
+            <section className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24 mb-40 animate-section opacity-0">
+                <div className="bg-gradient-to-b from-brand-clay/5 to-transparent border border-brand-clay/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+                    {/* Decorative element */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-clay/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/3"></div>
+                    
+                    <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
+                        <div className="flex-1">
+                            <div className="flex items-center gap-3 text-brand-clay bg-brand-clay/10 px-4 py-2 rounded-full w-fit mb-6 border border-brand-clay/30">
+                                <ShieldCheck size={20} />
+                                <span className="font-sans font-medium text-sm">Independently Lab Tested & Certified</span>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-display text-white mb-6">
+                                Uncompromising Purity & Authenticity
+                            </h2>
+                            <p className="text-brand-cream/70 font-sans leading-relaxed mb-6">
+                                Because pure Agarwood oil is one of the most expensive natural oils in the world, authenticity is paramount. Our oil is rigorously tested by independent laboratories, including the Forest Research Institute Malaysia (FRIM) and Lexva Analytique in France.
+                            </p>
+                            <div className="space-y-4 mb-8">
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle size={20} className="text-brand-clay mt-1 shrink-0" />
+                                    <p className="text-brand-cream/80 text-sm font-sans">
+                                        <strong className="text-white block mb-1">High Concentration of Active Compounds</strong>
+                                        Lexva analysis confirms optimal levels of crucial sesquiterpenes and agarofurans, validating its therapeutic and aromatic potency.
+                                    </p>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle size={20} className="text-brand-clay mt-1 shrink-0" />
+                                    <p className="text-brand-cream/80 text-sm font-sans">
+                                        <strong className="text-white block mb-1">100% Pure Distillate</strong>
+                                        No synthetic additives, diluents, or carrier oils. Verified as true Aquilaria Malaccensis extract.
+                                    </p>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle size={20} className="text-brand-clay mt-1 shrink-0" />
+                                    <p className="text-brand-cream/80 text-sm font-sans">
+                                        <strong className="text-white block mb-1">FRIM Certified Source</strong>
+                                        Verified by the Forest Research Institute Malaysia, guaranteeing ethical sourcing and high-grade quality from our plantations.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            {/* Certificate Downloads */}
+                            <div className="pt-6 border-t border-white/10 flex flex-wrap gap-4">
+                                <a href="/Agar Oil/Agarwood TROPICAL EXTRACT Analyses Lexva.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-clay text-white px-5 py-3 rounded-xl hover:bg-[#a64526] transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-clay focus:ring-offset-2 focus:ring-offset-[#1A1A1A]">
+                                    <FileText size={18} />
+                                    <span className="font-sans text-sm font-medium">Download Lexva Analysis</span>
+                                </a>
+                                <a href="/Agar Oil/Frim Analysis.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/5 text-white border border-white/10 px-5 py-3 rounded-xl hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1A1A1A]">
+                                    <FileText size={18} />
+                                    <span className="font-sans text-sm font-medium">Download FRIM Report</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="w-full md:w-1/3 grid grid-cols-2 gap-4">
+                            <img src="/Agar Oil/IMG-20250210-WA0013.jpg" alt="Agarwood purity testing" className="rounded-xl w-full h-full object-cover shadow-lg border border-white/10" loading="lazy" />
+                            <img src="/Agar Oil/IMG-20250224-WA0003.jpg" alt="Laboratory analysis vials" className="rounded-xl w-full h-full object-cover shadow-lg border border-white/10 translate-y-6" loading="lazy" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

@@ -10,6 +10,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
         { name: 'Products', path: '/products' },
+        { name: 'Wood Comparison', path: '/wood-comparison' },
         { name: 'Compliance', path: '/compliance' },
         { name: 'Vitrex Timber Industries', path: '/vitrex' },
         { name: 'Agarwood', path: '/agarwood' },
@@ -31,12 +32,12 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden lg:flex items-center gap-3 xl:gap-6">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={`font-sans text-sm tracking-wide transition-colors ${isActive(link.path) ? 'text-brand-clay font-medium' : `${navMutedColor} hover:text-brand-moss`
+                            className={`font-sans text-xs xl:text-sm tracking-wide whitespace-nowrap transition-colors ${isActive(link.path) ? 'text-brand-clay font-medium' : `${navMutedColor} hover:text-brand-moss`
                                 }`}
                         >
                             {link.name}

@@ -12,13 +12,15 @@ const timelineSteps = [
         icon: <TreePine size={32} className="text-brand-moss" />,
         title: "Sustainable Harvesting",
         description: "Our timber begins its journey in sustainably managed Malaysian forests and our Kelantan plantations (Vitrex Timber Industries). We strictly adhere to selective harvesting practices to regenerate forest ecosystems.",
-        keyword: "PEFC certified hardwood supplier"
+        keyword: "PEFC certified hardwood supplier",
+        image: "/REPLANTING/IMG-20260617-WA0033.jpg"
     },
     {
         icon: <Map size={32} className="text-brand-moss" />,
         title: "Geolocated Traceability",
         description: "Every log is tagged and recorded at the stump. We map exact GPS coordinates to ensure absolute proof of origin, satisfying the strictest global import regulations.",
-        keyword: "Timber traceability system"
+        keyword: "Timber traceability system",
+        image: "/REPLANTING/IMG-20260617-WA0040.jpg"
     },
     {
         icon: <ShieldCheck size={32} className="text-brand-moss" />,
@@ -122,8 +124,13 @@ const Compliance = () => {
                                 </div>
 
                                 {/* Node Side (Visual Spacer for Timeline) */}
-                                <div className="hidden md:flex flex-1 justify-center relative">
-                                    <div className="w-4 h-4 rounded-full bg-brand-moss absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 shadow-[0_0_15px_rgba(30,63,32,0.3)]"></div>
+                                <div className="hidden md:flex flex-1 justify-center relative items-center">
+                                    <div className="w-4 h-4 rounded-full bg-brand-moss absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 shadow-[0_0_15px_rgba(30,63,32,0.3)] z-20"></div>
+                                    {step.image && (
+                                        <div className={`w-[70%] max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-brand-charcoal/5 ${index % 2 === 0 ? 'ml-auto mr-12' : 'mr-auto ml-12'}`}>
+                                            <img src={step.image} alt={step.title} className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105" loading="lazy" />
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}

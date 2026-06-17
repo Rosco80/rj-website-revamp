@@ -11,6 +11,7 @@ const Products = lazy(() => import('./pages/Products'));
 const Species = lazy(() => import('./pages/Species'));
 const ExportRegion = lazy(() => import('./pages/ExportRegion'));
 const Agarwood = lazy(() => import('./pages/Agarwood'));
+const WoodComparison = lazy(() => import('./pages/WoodComparison'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const About = lazy(() => import('./pages/About'));
@@ -47,6 +48,7 @@ function AppContent() {
             <Route path="/products/:id" element={<Species />} />
             <Route path="/export/:region" element={<ExportRegion />} />
             <Route path="/agarwood" element={<Agarwood />} />
+            <Route path="/wood-comparison" element={<WoodComparison />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
