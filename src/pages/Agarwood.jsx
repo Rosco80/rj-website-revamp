@@ -270,7 +270,7 @@ const Agarwood = () => {
                             
                             {/* Certificate Downloads */}
                             <div className="pt-6 border-t border-white/10 flex flex-wrap gap-4">
-                                <a href="/Agar Oil/Agarwood TROPICAL EXTRACT Analyses Lexva.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-clay text-white px-5 py-3 rounded-xl hover:bg-[#a64526] transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-clay focus:ring-offset-2 focus:ring-offset-[#1A1A1A]">
+                                <a href="/Agar Oil/87015 Agarwood TROPICAL EXTRACT Analyses Lexva_260616_183034.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-clay text-white px-5 py-3 rounded-xl hover:bg-[#a64526] transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-clay focus:ring-offset-2 focus:ring-offset-[#1A1A1A]">
                                     <FileText size={18} />
                                     <span className="font-sans text-sm font-medium">Download Lexva Analysis</span>
                                 </a>
