@@ -1,0 +1,18 @@
+Project: Global Wood Buyer Sourcing Engine (Phase 1)
+
+1. Objective & Goal
+   To build an automated outbound intelligence pipeline for R&J Wood Trading that identifies active international buyers of processed Malaysian timber (planks, strips, scantlings, mouldings). The engine will leverage public/commercial maritime customs data to target high-intent prospects, bypass cold-outreach noise, and route qualified leads into an automated LinkedIn enrichment and personalization workflow.
+
+2. Core Constraints & Regulations
+   Malaysian Law Compliance: Raw log exports are strictly prohibited by the Malaysian Timber Industry Board (MTIB). The engine must not track or source raw logs.
+
+Product Scope: Exclusively target processed and semi-processed value-added timber.
+
+Target Moat: Leverage the unfair advantage of our sister company, Vitrex SDN BHD, highlighting direct plantation ownership, sawmill infrastructure in Kelantan, strict chain-of-custody control, and heritage.
+
+3. Technical Scope (Phase 1)
+   Data Ingestion: A Python script that queries or parses customs/Bill of Lading data files (CSV/API).
+
+Filtering Logic: Hard filter for origin country ("Malaysia") and specific HS Codes (4407 for sawn timber >6mm, 4409 for continuously shaped/moulded wood). Explicitly exclude raw log keywords.
+
+Data Enrichment Pipeline: Export clean data containing Buyer Company Name, Destination Country, and Volume to an orchestration layer (n8n/Make) for LinkedIn contact matching (Procurement/Sourcing Directors) and AI-generated personalized hooks.

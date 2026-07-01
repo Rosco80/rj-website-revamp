@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "buyer_company": "Acme Furniture",
+        "buyer_country": "USA",
+        "hs_code": "4407",
+        "product_description": "Sawn timber planks",
+        "estimated_volume_tons": 300.0,
+        "arrival_date": "2024-02-15"
+    },
+    {
+        "id": 2,
+        "buyer_company": "EuroMouldings",
+        "buyer_country": "Germany",
+        "hs_code": "4409",
+        "product_description": "Continuously shaped wood",
+        "estimated_volume_tons": 120.0,
+        "arrival_date": "2024-03-10"
+    },
+    {
+        "id": 3,
+        "buyer_company": "Ashley Furniture Industries",
+        "buyer_country": "USA",
+        "hs_code": "4407",
+        "product_description": "Sawn timber planks",
+        "estimated_volume_tons": 150.0,
+        "arrival_date": "2024-01-15"
+    },
+    {
+        "id": 4,
+        "buyer_company": "IKEA Supply AG",
+        "buyer_country": "Switzerland",
+        "hs_code": "4409",
+        "product_description": "Continuously shaped wood",
+        "estimated_volume_tons": 90.0,
+        "arrival_date": "2024-03-10"
+    },
+    {
+        "id": 5,
+        "buyer_company": "Williams-Sonoma Inc",
+        "buyer_country": "USA",
+        "hs_code": "4407",
+        "product_description": "Sawn timber",
+        "estimated_volume_tons": 120.0,
+        "arrival_date": "2024-01-10"
+    }
+]

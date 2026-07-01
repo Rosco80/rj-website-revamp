@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Philosophy from '../components/Philosophy';
 import Protocol from '../components/Protocol';
+import Reviews from '../components/Reviews';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 
@@ -143,6 +144,9 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* ── Client Feedback ────────────────────────────────────────────── */}
+            <Reviews />
 
             <Philosophy />
             <Protocol />

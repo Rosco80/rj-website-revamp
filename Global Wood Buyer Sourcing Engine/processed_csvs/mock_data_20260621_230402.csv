@@ -1,0 +1,5 @@
+manifest_id,buyer_name,origin_country,destination_country,hs_code,product_desc,weight_kg,arrival_date
+1,Ashley Furniture Industries,Malaysia,USA,4407,Sawn timber planks,50000,2024-01-15
+2,IKEA Supply AG,Malaysia,Switzerland,4409,Continuously shaped wood,30000,2024-03-10
+3,Global Logs Inc,Malaysia,China,4403,Rough logs of Meranti,100000,2024-01-20
+4,Williams-Sonoma Inc,MY KLA,USA,4407,Sawn timber,40000,2024-01-10
