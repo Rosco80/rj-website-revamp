@@ -6,6 +6,7 @@ import { calculateQuote } from '../utils/quoteCalculator';
 import LeadCaptureModal from '../components/quote/LeadCaptureModal';
 import QuotePDF from '../components/quote/QuotePDF';
 import { pdf } from '@react-pdf/renderer';
+import { track } from '@vercel/analytics';
 
 // Comprehensive Fallback Data
 const fallbackSpecies = [
@@ -57,7 +58,7 @@ const fallbackFreight = [
     { region: 'Asia', cost40ft: 12000 }
 ];
 
-const fallbackSettings = { exchangeRate: 4.04, containerCapacityTon: 26, containerCapacityM3: 36, contactEmail: 'info@rjwoodtrading.com' };
+const fallbackSettings = { exchangeRate: 4.04, containerCapacityTon: 26, containerCapacityM3: 36, contactEmail: 'rjwoodtradings@gmail.com' };
 
 const Quote = () => {
     const [speciesIdx, setSpeciesIdx] = useState(0);
@@ -141,6 +142,15 @@ const Quote = () => {
             },
             calculation: result
         });
+
+        track('quote_calculated', {
+            species: selectedSpecies.species,
+            grade,
+            volume_m3: computedVolume,
+            is_s4s: isS4S,
+            is_kd: isKD,
+            destination: selectedRegion.region
+        });
         
         setTimeout(() => {
             document.getElementById('quote-result')?.scrollIntoView({ behavior: 'smooth' });
@@ -151,6 +161,12 @@ const Quote = () => {
         setLeadData(data);
         setIsModalOpen(false);
         setIsDownloading(true);
+
+        track('pdf_quote_downloaded', {
+            species: quoteResult.inputs.species.species,
+            volume_m3: quoteResult.inputs.volumeM3,
+            company: data.company
+        });
 
         try {
             const blob = await pdf(
@@ -382,7 +398,7 @@ const Quote = () => {
 
                                 <div className="p-4 bg-brand-surface rounded-xl border border-brand-charcoal/5 mb-8">
                                     <p className="text-xs text-brand-charcoal/60 italic leading-relaxed text-center">
-                                        * This is not the final quotation. This is just an indicative price for a full detail quotation. Please get in touch at <a href={`mailto:${fallbackSettings.contactEmail}`} className="text-brand-moss underline">{fallbackSettings.contactEmail}</a>
+                                        * This is not a final quotation; it is an indicative price only. For a full, detailed quotation, please get in touch at <a href={`mailto:${fallbackSettings.contactEmail}`} className="text-brand-moss underline">{fallbackSettings.contactEmail}</a>.
                                     </p>
                                 </div>
 

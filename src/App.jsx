@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy-load non-critical routes to reduce initial bundle size
 const Vitrex = lazy(() => import('./pages/Vitrex'));
@@ -73,6 +74,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <AppContent />
+      <Analytics />
     </Router>
   );
 }

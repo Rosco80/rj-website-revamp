@@ -1,17 +1,20 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
+const formatCurrency = (val) => val.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
 const styles = StyleSheet.create({
   page: { padding: 40, fontFamily: 'Helvetica', color: '#1a1a1a' },
-  header: { marginBottom: 30, borderBottom: '1 solid #e5e5e5', paddingBottom: 10 },
-  title: { fontSize: 24, fontWeight: 'bold' },
+  header: { marginBottom: 30, borderBottom: '2 solid #324234', paddingBottom: 15 },
+  title: { fontSize: 28, fontWeight: 'bold', color: '#324234' },
   subtitle: { fontSize: 10, color: '#666', marginTop: 4 },
-  section: { marginBottom: 20 },
-  sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, backgroundColor: '#f5f5f5', padding: 4 },
-  row: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4, fontSize: 10 },
-  label: { color: '#666' },
-  value: { fontWeight: 'bold' },
-  totalRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, paddingTop: 10, borderTop: '1 solid #e5e5e5', fontSize: 14, fontWeight: 'bold' },
+  section: { marginBottom: 25 },
+  sectionTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8, backgroundColor: '#324234', color: '#fff', padding: '6 8', textTransform: 'uppercase' },
+  row: { flexDirection: 'row', justifyContent: 'space-between', padding: '6 8', borderBottom: '1 solid #e5e5e5', fontSize: 10 },
+  rowHighlight: { flexDirection: 'row', justifyContent: 'space-between', padding: '6 8', borderBottom: '1 solid #e5e5e5', fontSize: 10, backgroundColor: '#fafafa' },
+  label: { color: '#444' },
+  value: { fontWeight: 'bold', textAlign: 'right' },
+  totalRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 15, padding: '12 8', backgroundColor: '#f0f3f0', borderTop: '2 solid #324234', borderBottom: '2 solid #324234', fontSize: 13, fontWeight: 'bold', color: '#324234' },
   disclaimer: { marginTop: 40, fontSize: 9, color: '#888', fontStyle: 'italic', textAlign: 'center' }
 });
 
@@ -32,30 +35,33 @@ const QuotePDF = ({ quoteData, contactEmail }) => {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Project Requirements</Text>
           <View style={styles.row}><Text style={styles.label}>Species</Text><Text style={styles.value}>{species.species}</Text></View>
-          <View style={styles.row}><Text style={styles.label}>Grade</Text><Text style={styles.value}>{grade}</Text></View>
+          <View style={styles.rowHighlight}><Text style={styles.label}>Grade</Text><Text style={styles.value}>{grade}</Text></View>
           <View style={styles.row}><Text style={styles.label}>Dimensions</Text><Text style={styles.value}>{dimensions}</Text></View>
-          <View style={styles.row}><Text style={styles.label}>Quantity</Text><Text style={styles.value}>{quantity} pieces</Text></View>
+          <View style={styles.rowHighlight}><Text style={styles.label}>Quantity</Text><Text style={styles.value}>{Number(quantity).toLocaleString('en-US')} pieces</Text></View>
           <View style={styles.row}><Text style={styles.label}>Total Volume (m³)</Text><Text style={styles.value}>{volumeM3.toFixed(3)}</Text></View>
-          <View style={styles.row}><Text style={styles.label}>Processing</Text><Text style={styles.value}>{isS4S ? 'S4S' : 'Rough Sawn'} {isKD ? '+ Kiln Dried' : ''}</Text></View>
+          <View style={styles.rowHighlight}><Text style={styles.label}>Processing</Text><Text style={styles.value}>{isS4S ? 'S4S' : 'Rough Sawn'} {isKD ? '+ Kiln Dried' : ''}</Text></View>
           <View style={styles.row}><Text style={styles.label}>Destination Region</Text><Text style={styles.value}>{region.region}</Text></View>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Estimated Costs Breakdown</Text>
-          <View style={styles.row}><Text style={styles.label}>Base Timber ({species.species})</Text><Text style={styles.value}>RM {baseTimberCostMYR.toFixed(2)}</Text></View>
-          {isS4S && <View style={styles.row}><Text style={styles.label}>Processing (S4S)</Text><Text style={styles.value}>+ RM {s4sCostMYR.toFixed(2)}</Text></View>}
-          {isKD && <View style={styles.row}><Text style={styles.label}>Processing (Kiln Dried)</Text><Text style={styles.value}>+ RM {kdCostMYR.toFixed(2)}</Text></View>}
-          <View style={styles.row}><Text style={styles.label}>Freight ({region.region} — 1 x 40ft container)</Text><Text style={styles.value}>RM {singleContainerFreightMYR.toFixed(2)}</Text></View>
-          {recommendedContainers > 1 && <View style={styles.row}><Text style={styles.label}>Recommended containers for this volume</Text><Text style={styles.value}>{recommendedContainers} containers</Text></View>}
+          <View style={styles.row}><Text style={styles.label}>Base Timber ({species.species})</Text><Text style={styles.value}>RM {formatCurrency(baseTimberCostMYR)}</Text></View>
+          {isS4S && <View style={styles.rowHighlight}><Text style={styles.label}>Processing (S4S)</Text><Text style={styles.value}>+ RM {formatCurrency(s4sCostMYR)}</Text></View>}
+          {isKD && <View style={isS4S ? styles.row : styles.rowHighlight}><Text style={styles.label}>Processing (Kiln Dried)</Text><Text style={styles.value}>+ RM {formatCurrency(kdCostMYR)}</Text></View>}
+          <View style={(!isS4S && !isKD) || (isS4S && isKD) ? styles.rowHighlight : styles.row}><Text style={styles.label}>Freight ({region.region} — 1 x 40ft container)</Text><Text style={styles.value}>RM {formatCurrency(singleContainerFreightMYR)}</Text></View>
+          
+          {recommendedContainers > 1 && (
+             <View style={styles.row}><Text style={styles.label}>Recommended containers for this volume</Text><Text style={styles.value}>{recommendedContainers} containers</Text></View>
+          )}
           
           <View style={styles.totalRow}>
-            <Text>Total Indicative Value (1 container freight)</Text>
-            <Text>RM {totalCostMYR.toFixed(2)} / ${totalCostUSD.toFixed(2)} USD</Text>
+            <Text>Total Indicative Value (1 container)</Text>
+            <Text>RM {formatCurrency(totalCostMYR)} / ${formatCurrency(totalCostUSD)} USD</Text>
           </View>
         </View>
 
         <Text style={styles.disclaimer}>
-          * This is not the final quotation. This is just an indicative price for a full detail quotation. Please get in touch at {contactEmail}
+          * This is not a final quotation; it is an indicative price only. For a full, detailed quotation, please get in touch at {contactEmail}.
         </Text>
       </Page>
     </Document>
