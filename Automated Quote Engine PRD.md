@@ -42,6 +42,6 @@ The engine will need a simple interface (either internal or web-based) capturing
 
 ---
 **Next Actions / Open Questions for R&J Wood Trading:**
-- [ ] Provide a rough Excel sheet or list of the base pricing data (Species, Grades, Processing).
-- [ ] Provide average FOB and Freight costs for standard destinations.
-- [ ] Decide if this tool will be strictly for internal sales use, or embedded directly on the website for clients to use.
+- [x] Provide a rough Excel sheet or list of the base pricing data (Species, Grades, Processing). *(Provided via Cost.pdf and Vitrex KD rates PDF)*
+- [x] Provide average FOB and Freight costs for standard destinations. *(Provided via Cost.pdf)*
+- [x] Decide if this tool will be strictly for internal sales use, or embedded directly on the website for clients to use. *(Decided: Both. PDF downloads will be gated behind a lead capture form).*
