@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 const QuotePDF = ({ quoteData, contactEmail }) => {
   const { inputs, calculation, lead } = quoteData;
   const { species, grade, dimensions, quantity, volumeM3, isS4S, isKD, region } = inputs;
-  const { timberCostMYR, kdCostMYR, totalFreightMYR, numContainers, totalCostMYR, totalCostUSD } = calculation;
+  const { baseTimberCostMYR, s4sCostMYR, kdCostMYR, singleContainerFreightMYR, recommendedContainers, totalCostMYR, totalCostUSD } = calculation;
 
   return (
     <Document>
@@ -42,12 +42,14 @@ const QuotePDF = ({ quoteData, contactEmail }) => {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Estimated Costs Breakdown</Text>
-          <View style={styles.row}><Text style={styles.label}>Base Timber (incl. S4S if applicable)</Text><Text style={styles.value}>RM {timberCostMYR.toFixed(2)}</Text></View>
-          {isKD && <View style={styles.row}><Text style={styles.label}>Kiln Drying</Text><Text style={styles.value}>RM {kdCostMYR.toFixed(2)}</Text></View>}
-          <View style={styles.row}><Text style={styles.label}>Freight ({numContainers} x 40ft container)</Text><Text style={styles.value}>RM {totalFreightMYR.toFixed(2)}</Text></View>
+          <View style={styles.row}><Text style={styles.label}>Base Timber ({species.species})</Text><Text style={styles.value}>RM {baseTimberCostMYR.toFixed(2)}</Text></View>
+          {isS4S && <View style={styles.row}><Text style={styles.label}>Processing (S4S)</Text><Text style={styles.value}>+ RM {s4sCostMYR.toFixed(2)}</Text></View>}
+          {isKD && <View style={styles.row}><Text style={styles.label}>Processing (Kiln Dried)</Text><Text style={styles.value}>+ RM {kdCostMYR.toFixed(2)}</Text></View>}
+          <View style={styles.row}><Text style={styles.label}>Freight ({region.region} — 1 x 40ft container)</Text><Text style={styles.value}>RM {singleContainerFreightMYR.toFixed(2)}</Text></View>
+          {recommendedContainers > 1 && <View style={styles.row}><Text style={styles.label}>Recommended containers for this volume</Text><Text style={styles.value}>{recommendedContainers} containers</Text></View>}
           
           <View style={styles.totalRow}>
-            <Text>Total Indicative Value</Text>
+            <Text>Total Indicative Value (1 container freight)</Text>
             <Text>RM {totalCostMYR.toFixed(2)} / ${totalCostUSD.toFixed(2)} USD</Text>
           </View>
         </View>

@@ -10,8 +10,8 @@ import { pdf } from '@react-pdf/renderer';
 // Comprehensive Fallback Data
 const fallbackSpecies = [
     { species: 'Red Meranti', standardPrice: 3600, merchandablePrice: 2760, s4sAddon: 28, kdCategory: 'B' },
-    { species: 'Membatu', standardPrice: 6720, merchandablePrice: null, s4sAddon: 13, kdCategory: 'C' },
-    { species: 'Merbau', standardPrice: 6960, merchandablePrice: 6264, s4sAddon: 3, kdCategory: 'C' },
+    { species: 'Membatu', standardPrice: 6720, merchandablePrice: null, s4sAddon: 36, kdCategory: 'C' },
+    { species: 'Merbau', standardPrice: 6960, merchandablePrice: 6264, s4sAddon: 24, kdCategory: 'C' },
     { species: 'Chengal', standardPrice: 27840, merchandablePrice: null, s4sAddon: 28, kdCategory: 'C' },
     { species: 'Kempas', standardPrice: 5280, merchandablePrice: 4800, s4sAddon: 25, kdCategory: 'C' },
     { species: 'Keruing', standardPrice: 5280, merchandablePrice: 4800, s4sAddon: 25, kdCategory: 'C' },
@@ -66,7 +66,7 @@ const Quote = () => {
     // Dimension inputs constrained by grade
     const [thicknessIn, setThicknessIn] = useState('0.5');
     const [widthIn, setWidthIn] = useState('3.5');
-    const [lengthFt, setLengthFt] = useState('10');
+    const [lengthRange, setLengthRange] = useState('7-16');
     const [quantity, setQuantity] = useState('1000');
     const [computedVolume, setComputedVolume] = useState(0);
 
@@ -83,18 +83,14 @@ const Quote = () => {
     useEffect(() => {
         if (grade === 'Standard & Better') {
             setThicknessIn('0.5');
-            setWidthIn('3.5'); // Default to 3.5
-            // Length constraint handled in input attributes (7-16)
-            if (parseFloat(lengthFt) < 7 || parseFloat(lengthFt) > 16) {
-                setLengthFt('10');
+            setWidthIn('3.5');
+            if (lengthRange === '3-20') {
+                setLengthRange('7-16');
             }
         } else {
             setThicknessIn('2.25');
-            setWidthIn('4.75'); // Default to 4.75
-            // Length constraint handled in input attributes (3-20)
-            if (parseFloat(lengthFt) < 3 || parseFloat(lengthFt) > 20) {
-                setLengthFt('10');
-            }
+            setWidthIn('4.75');
+            setLengthRange('3-20');
         }
     }, [grade]);
 
@@ -102,13 +98,17 @@ const Quote = () => {
     useEffect(() => {
         const t = parseFloat(thicknessIn) || 0;
         const w = parseFloat(widthIn) || 0;
-        const l = parseFloat(lengthFt) || 0;
+        
+        // Use average length of range for indicative volume
+        let l = 11.5; // default for 7-16 and 3-20
+        if (lengthRange === '8-14') l = 11;
+        
         const q = parseFloat(quantity) || 0;
         
         // Convert to meters: inch * 0.0254, ft * 0.3048
         const volM3 = (t * 0.0254) * (w * 0.0254) * (l * 0.3048) * q;
         setComputedVolume(volM3);
-    }, [thicknessIn, widthIn, lengthFt, quantity]);
+    }, [thicknessIn, widthIn, lengthRange, quantity]);
 
     const handleCalculate = (e) => {
         e.preventDefault();
@@ -132,7 +132,7 @@ const Quote = () => {
             inputs: {
                 species: selectedSpecies,
                 grade,
-                dimensions: `${thicknessIn}" x ${widthIn}" x ${lengthFt}'`,
+                dimensions: `${thicknessIn}" x ${widthIn}" x ${lengthRange} ft`,
                 quantity,
                 volumeM3: computedVolume,
                 isS4S,
@@ -251,14 +251,9 @@ const Quote = () => {
                                 <div className="grid grid-cols-3 gap-4 mb-4">
                                     <div>
                                         <label className="block text-xs text-brand-clay mb-1">Thickness (inch)</label>
-                                        <select className="w-full bg-brand-surface border-none rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-brand-moss"
-                                            value={thicknessIn} onChange={(e) => setThicknessIn(e.target.value)} disabled>
-                                            {grade === 'Standard & Better' ? (
-                                                <option value="0.5">0.5" (1/2")</option>
-                                            ) : (
-                                                <option value="2.25">2.25"</option>
-                                            )}
-                                        </select>
+                                        <div className="w-full bg-brand-surface border-none rounded-xl px-3 py-2 text-sm text-brand-charcoal opacity-80 select-none">
+                                            {grade === 'Standard & Better' ? '0.5" (1/2")' : '2.25"'}
+                                        </div>
                                     </div>
                                     <div>
                                         <label className="block text-xs text-brand-clay mb-1">Width (inch)</label>
@@ -278,14 +273,13 @@ const Quote = () => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-xs text-brand-clay mb-1">
-                                            Length ({grade === 'Standard & Better' ? '7-16 ft' : '3-20 ft'})
-                                        </label>
-                                        <input required type="number" 
-                                            min={grade === 'Standard & Better' ? 7 : 3} 
-                                            max={grade === 'Standard & Better' ? 16 : 20} 
-                                            step="0.1" className="w-full bg-brand-surface border-none rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-brand-moss"
-                                            value={lengthFt} onChange={(e) => setLengthFt(e.target.value)} />
+                                        <label className="block text-xs text-brand-clay mb-1">Length Range</label>
+                                        <select className="w-full bg-brand-surface border-none rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-brand-moss"
+                                            value={lengthRange} onChange={(e) => setLengthRange(e.target.value)}>
+                                            {grade === 'Merchandable Grade' && <option value="3-20">3 to 20 ft</option>}
+                                            <option value="7-16">7 to 16 ft</option>
+                                            <option value="8-14">8 to 14 ft</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
@@ -343,39 +337,52 @@ const Quote = () => {
                     {/* RESULTS DISPLAY */}
                     <div>
                         {quoteResult ? (
-                            <div id="quote-result" className="bg-brand-charcoal text-brand-cream rounded-3xl p-8 shadow-xl sticky top-8">
-                                <h2 className="text-2xl font-display mb-8 pb-4 border-b border-brand-cream/10">Indicative Summary</h2>
+                            <div id="quote-result" className="bg-white border border-brand-charcoal/10 text-brand-charcoal rounded-3xl p-8 shadow-2xl sticky top-8">
+                                <h2 className="text-2xl font-display mb-8 pb-4 border-b border-brand-charcoal/10">Indicative Summary</h2>
                                 
                                 <div className="space-y-4 font-sans text-sm mb-8">
-                                    <div className="flex justify-between items-center pb-2 border-b border-brand-cream/5">
-                                        <span className="text-brand-cream/60">Base Timber ({quoteResult.inputs.species.species})</span>
-                                        <span>RM {quoteResult.calculation.timberCostMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                    <div className="flex justify-between items-center pb-2 border-b border-brand-charcoal/5">
+                                        <span className="text-brand-charcoal/60">Base Timber ({quoteResult.inputs.species.species})</span>
+                                        <span className="font-medium">RM {quoteResult.calculation.baseTimberCostMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
                                     </div>
-                                    {quoteResult.inputs.isKD && (
-                                        <div className="flex justify-between items-center pb-2 border-b border-brand-cream/5">
-                                            <span className="text-brand-cream/60">Kiln Drying ({quoteResult.calculation.appliedKdRate} RM/Ton)</span>
-                                            <span>RM {quoteResult.calculation.kdCostMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                    {quoteResult.inputs.isS4S && (
+                                        <div className="flex justify-between items-center pb-2 border-b border-brand-charcoal/5">
+                                            <span className="text-brand-charcoal/60">Processing (S4S)</span>
+                                            <span className="font-medium text-brand-moss">+ RM {quoteResult.calculation.s4sCostMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
                                         </div>
                                     )}
-                                    <div className="flex justify-between items-center pb-2 border-b border-brand-cream/5">
-                                        <span className="text-brand-cream/60">Freight ({quoteResult.inputs.region.region} - {quoteResult.calculation.numContainers} container/s)</span>
-                                        <span>RM {quoteResult.calculation.totalFreightMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                    {quoteResult.inputs.isKD && (
+                                        <div className="flex justify-between items-center pb-2 border-b border-brand-charcoal/5">
+                                            <span className="text-brand-charcoal/60">Processing (Kiln Dried)</span>
+                                            <span className="font-medium text-brand-moss">+ RM {quoteResult.calculation.kdCostMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                        </div>
+                                    )}
+                                    <div className="flex justify-between items-center pb-2 border-b border-brand-charcoal/5">
+                                        <span className="text-brand-charcoal/60">Freight ({quoteResult.inputs.region.region} — 1 x 40ft container)</span>
+                                        <span className="font-medium">RM {quoteResult.calculation.singleContainerFreightMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
                                     </div>
+                                    {quoteResult.calculation.recommendedContainers > 1 && (
+                                        <div className="p-3 bg-brand-moss/10 rounded-lg border border-brand-moss/20">
+                                            <p className="text-xs text-brand-moss leading-relaxed">
+                                                📦 Based on your order volume ({quoteResult.inputs.volumeM3.toFixed(1)} m³), we recommend <strong>{quoteResult.calculation.recommendedContainers} containers</strong>. The price above includes freight for 1 container only — please <a href={`mailto:${fallbackSettings.contactEmail}`} className="underline font-semibold">contact us</a> for multi-container pricing.
+                                            </p>
+                                        </div>
+                                    )}
                                     
                                     <div className="pt-4">
                                         <div className="flex justify-between items-end mb-2">
                                             <span className="text-lg font-display text-brand-moss">Total Value</span>
                                             <div className="text-right">
                                                 <div className="text-2xl font-bold">RM {quoteResult.calculation.totalCostMYR.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
-                                                <div className="text-sm text-brand-cream/40">≈ ${quoteResult.calculation.totalCostUSD.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD</div>
+                                                <div className="text-sm text-brand-charcoal/50 font-medium">≈ ${quoteResult.calculation.totalCostUSD.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="p-4 bg-brand-cream/5 rounded-xl border border-brand-cream/10 mb-8">
-                                    <p className="text-xs text-brand-cream/60 italic leading-relaxed text-center">
-                                        * This is not the final quotation. This is just an indicative price for a full detail quotation. Please get in touch at <a href={`mailto:${fallbackSettings.contactEmail}`} className="text-brand-moss">{fallbackSettings.contactEmail}</a>
+                                <div className="p-4 bg-brand-surface rounded-xl border border-brand-charcoal/5 mb-8">
+                                    <p className="text-xs text-brand-charcoal/60 italic leading-relaxed text-center">
+                                        * This is not the final quotation. This is just an indicative price for a full detail quotation. Please get in touch at <a href={`mailto:${fallbackSettings.contactEmail}`} className="text-brand-moss underline">{fallbackSettings.contactEmail}</a>
                                     </p>
                                 </div>
 
@@ -387,14 +394,14 @@ const Quote = () => {
                                 ) : leadData ? (
                                     <button 
                                         onClick={handleRedownload}
-                                        className="flex items-center justify-center gap-2 w-full bg-brand-moss text-white font-mono uppercase tracking-widest text-sm py-4 rounded-xl hover:bg-white hover:text-brand-charcoal transition-colors"
+                                        className="flex items-center justify-center gap-2 w-full bg-brand-moss text-white font-mono uppercase tracking-widest text-sm py-4 rounded-xl hover:bg-brand-clay transition-colors shadow-lg shadow-brand-moss/20"
                                     >
                                         <Download size={18} /> Download PDF Again
                                     </button>
                                 ) : (
                                     <button 
                                         onClick={() => setIsModalOpen(true)}
-                                        className="flex items-center justify-center gap-2 w-full bg-brand-cream text-brand-charcoal font-mono uppercase tracking-widest text-sm py-4 rounded-xl hover:bg-white transition-colors"
+                                        className="flex items-center justify-center gap-2 w-full bg-brand-charcoal text-white font-mono uppercase tracking-widest text-sm py-4 rounded-xl hover:bg-brand-moss transition-colors shadow-lg"
                                     >
                                         <Download size={18} /> Generate PDF
                                     </button>
