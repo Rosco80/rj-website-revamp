@@ -6,7 +6,6 @@ import { calculateQuote } from '../utils/quoteCalculator';
 import LeadCaptureModal from '../components/quote/LeadCaptureModal';
 import QuotePDF from '../components/quote/QuotePDF';
 import { pdf } from '@react-pdf/renderer';
-import { track } from '@vercel/analytics';
 
 // Comprehensive Fallback Data
 const fallbackSpecies = [
@@ -143,14 +142,16 @@ const Quote = () => {
             calculation: result
         });
 
-        track('quote_calculated', {
-            species: selectedSpecies.species,
-            grade,
-            volume_m3: computedVolume,
-            is_s4s: isS4S,
-            is_kd: isKD,
-            destination: selectedRegion.region
-        });
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'quote_calculated', {
+                species: selectedSpecies.species,
+                grade,
+                volume_m3: computedVolume,
+                is_s4s: isS4S,
+                is_kd: isKD,
+                destination: selectedRegion.region
+            });
+        }
         
         setTimeout(() => {
             document.getElementById('quote-result')?.scrollIntoView({ behavior: 'smooth' });
@@ -162,11 +163,13 @@ const Quote = () => {
         setIsModalOpen(false);
         setIsDownloading(true);
 
-        track('pdf_quote_downloaded', {
-            species: quoteResult.inputs.species.species,
-            volume_m3: quoteResult.inputs.volumeM3,
-            company: data.company
-        });
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'pdf_quote_downloaded', {
+                species: quoteResult.inputs.species.species,
+                volume_m3: quoteResult.inputs.volumeM3,
+                company: data.company
+            });
+        }
 
         try {
             const blob = await pdf(
