@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import { Analytics } from '@vercel/analytics/react';
+import posthog from './lib/posthog';
 
 // Lazy-load non-critical routes to reduce initial bundle size
 const Vitrex = lazy(() => import('./pages/Vitrex'));
@@ -23,14 +24,15 @@ const Compliance = lazy(() => import('./pages/Compliance'));
 const Resources = lazy(() => import('./pages/Resources'));
 const Contact = lazy(() => import('./pages/Contact'));
 
-// Scroll to top on route change
+// Scroll to top and track pageview on route change
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   useEffect(() => {
     if (!pathname.startsWith('/studio')) {
       window.scrollTo(0, 0);
     }
-  }, [pathname]);
+    posthog.capture('$pageview');
+  }, [pathname, search]);
   return null;
 };
 

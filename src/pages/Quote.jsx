@@ -6,6 +6,7 @@ import { calculateQuote } from '../utils/quoteCalculator';
 import LeadCaptureModal from '../components/quote/LeadCaptureModal';
 import QuotePDF from '../components/quote/QuotePDF';
 import { pdf } from '@react-pdf/renderer';
+import posthog from '../lib/posthog';
 
 // Comprehensive Fallback Data
 const fallbackSpecies = [
@@ -183,6 +184,14 @@ const Quote = () => {
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
+
+            // Track primary conversion in PostHog
+            posthog.capture('conversion_completed', {
+                conversion_type: 'quote_pdf_download',
+                species: quoteResult?.inputs?.species?.species,
+                volume_m3: quoteResult?.inputs?.volumeM3,
+                company: data?.company
+            });
         } catch (err) {
             console.error('PDF generation failed:', err);
         } finally {

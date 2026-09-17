@@ -5,6 +5,9 @@ import './index.css'
 import App from './App.jsx'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
+import { initPostHog } from './lib/posthog'
+
+initPostHog()
 
 const container = document.getElementById('root')
 const app = (
